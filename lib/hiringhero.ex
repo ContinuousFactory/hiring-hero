@@ -9,7 +9,7 @@ defmodule Hiringhero do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      # supervisor(Hiringhero.Repo, []),
+      supervisor(Hiringhero.Repo, []),
       # Start the endpoint when the application starts
       supervisor(Hiringhero.Endpoint, []),
       # Start your own worker by calling: Hiringhero.Worker.start_link(arg1, arg2, arg3)
