@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Hiringhero!</title>
+    <title>Hiring Hero</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -15,6 +15,9 @@
     <div class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= if @current_user do %>
+        <%= Hiringhero.Coherence.ViewHelpers.coherence_links(@conn, :layout, [signout: 'Log out']) %>
+      <% end %>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
