@@ -15,11 +15,7 @@
     <div class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= link "Home", to: "/" %> |
-      <%= if @current_user do %>
-        <%= Hiringhero.Coherence.ViewHelpers.profile_link(@current_user, @conn) %> |
-        <%= Hiringhero.Coherence.ViewHelpers.signout_link(@conn) %>
-      <% end %>
+      <%= render Hiringhero.Shared, "menu.html", current_user: @current_user, conn: @conn %>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>

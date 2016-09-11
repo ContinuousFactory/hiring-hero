@@ -1,0 +1,5 @@
+<%= link "Home", to: "/" %> |
+<%= if @current_user do %>
+  <%= Hiringhero.Coherence.ViewHelpers.profile_link(@current_user, @conn) %> |
+  <%= Hiringhero.Coherence.ViewHelpers.signout_link(@conn) %>
+<% end %>

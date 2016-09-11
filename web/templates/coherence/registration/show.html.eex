@@ -18,5 +18,4 @@
 
 </ul>
 
-<%= link "Edit", to: registration_path(@conn, :edit, @user) %> |
-<%= link "Delete", to: registration_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure?"] %>
+<%= link "Edit", to: registration_path(@conn, :edit, @user) %>
