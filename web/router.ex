@@ -36,6 +36,8 @@ defmodule Hiringhero.Router do
 
   scope "/", Hiringhero do
     pipe_through :protected
+
+    get "/", UserController, :index
     resources "/users", UserController
   end
 end
