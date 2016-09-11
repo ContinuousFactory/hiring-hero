@@ -1,8 +1,6 @@
 defmodule Hiringhero.UserController do
   use Hiringhero.Web, :controller
-  alias Hiringhero.User
-
-  Coherence.Authentication.Session, protected: true
+  Coherence.Authentication.Session
 
   def index(conn, _params) do
     users = Repo.all(Hiringhero.User)
