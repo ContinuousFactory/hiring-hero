@@ -117,6 +117,10 @@ defmodule Hiringhero.Coherence.ViewHelpers do
     link text, to: coherence_path(@helpers, :invitation_path, conn, :new)
   end
 
+  def signout_link(conn, text \\ @signout_link, signout_class \\ "") do
+    link(text, to: coherence_path(@helpers, :session_path, conn, :delete), method: :delete, class: signout_class)
+  end
+
   def confirmation_link(_conn, _user_schema, false), do: []
   def confirmation_link(conn, user_schema, text) do
     if user_schema.confirmable?, do: [confirmation_link(conn, text)], else: []
@@ -134,7 +138,7 @@ defmodule Hiringhero.Coherence.ViewHelpers do
     end
   end
 
-  defp profile_link(current_user, conn) do
+  def profile_link(current_user, conn) do
     if Config.user_schema.registerable? do
       link current_user.name, to: coherence_path(@helpers, :registration_path, conn, :show, current_user.id)
     else
