@@ -1,0 +1,32 @@
+<h2>Listing candidates</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Summary</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for candidate <- @candidates do %>
+    <tr>
+      <td><%= candidate.name %></td>
+      <td><%= candidate.email %></td>
+      <td><%= candidate.status %></td>
+      <td><%= candidate.summary %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: candidate_path(@conn, :show, candidate), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: candidate_path(@conn, :edit, candidate), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New candidate", to: candidate_path(@conn, :new) %>

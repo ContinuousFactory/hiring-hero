@@ -1,0 +1,28 @@
+<h2>Show candidate</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @candidate.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @candidate.email %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @candidate.status %>
+  </li>
+
+  <li>
+    <strong>Summary:</strong>
+    <%= @candidate.summary %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: candidate_path(@conn, :edit, @candidate) %>
+<%= link "Back", to: candidate_path(@conn, :index) %>
