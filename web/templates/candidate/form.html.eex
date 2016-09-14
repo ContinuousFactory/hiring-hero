@@ -25,7 +25,8 @@
 
   <div class="form-group">
     <%= label f, :summary, class: "control-label" %>
-    <%= text_input f, :summary, class: "form-control" %>
+    <%= hidden_input f, :summary, class: "form-control" %>
+    <trix-editor input="candidate_summary"></trix-editor>
     <%= error_tag f, :summary %>
   </div>
 
