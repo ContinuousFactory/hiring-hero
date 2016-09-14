@@ -8,6 +8,13 @@
   </li>
 
   <li>
+    <strong>Resume:</strong>
+    <%= tag(:img,
+      width: "20%",
+      src: Enum.join(["http://localhost:4000/", Hiringhero.Document.url({@candidate.document, @candidate})], "")) %>
+  </li>
+
+  <li>
     <strong>Email:</strong>
     <%= @candidate.email %>
   </li>

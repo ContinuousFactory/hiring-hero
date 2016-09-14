@@ -1,11 +1,13 @@
 defmodule Hiringhero.Candidate do
   use Hiringhero.Web, :model
+  use Arc.Ecto.Schema
 
   schema "candidates" do
     field :name, :string
     field :email, :string
     field :status, :string
     field :summary, :string
+    field :document, Hiringhero.Document.Type
 
     timestamps()
   end
@@ -17,6 +19,7 @@ defmodule Hiringhero.Candidate do
     struct
     |> init_status
     |> cast(params, [:name, :email, :status, :summary])
+    |> cast_attachments(params, [:document])
     |> validate_required([:name, :email, :status, :summary])
   end
 
