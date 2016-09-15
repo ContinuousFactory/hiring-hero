@@ -17,7 +17,7 @@
       <td><%= candidate.name %></td>
       <td><%= candidate.email %></td>
       <td><%= candidate.status %></td>
-      <td><%= candidate.summary %></td>
+      <td><%= raw candidate.summary %></td>
 
       <td class="text-right">
         <%= link "Show", to: candidate_path(@conn, :show, candidate), class: "btn btn-default btn-xs" %>
