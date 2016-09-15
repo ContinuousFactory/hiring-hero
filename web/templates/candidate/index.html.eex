@@ -22,7 +22,7 @@
       <td class="text-right">
         <%= link "Show", to: candidate_path(@conn, :show, candidate), class: "btn btn-default btn-xs" %>
         <%= link "Edit", to: candidate_path(@conn, :edit, candidate), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <%= link "Delete", to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" %>
       </td>
     </tr>
 <% end %>

@@ -70,7 +70,8 @@ exports.config = {
     },
     styles: {
       fullcalendar: ['dist/fullcalendar.css'],
-      trix: ['dist/trix.css']
+      trix: ['dist/trix.css'],
+      'bootstrap-material-design': ['dist/css/bootstrap-material-design.css']
     }
   }
 };
