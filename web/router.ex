@@ -40,5 +40,6 @@ defmodule Hiringhero.Router do
     get "/", UserController, :index
     resources "/users", UserController
     resources "/candidates", CandidateController
+    get "/calendar", PageController, :calendar
   end
 end

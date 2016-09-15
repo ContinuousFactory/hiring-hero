@@ -13,6 +13,7 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 import "trix"
+import "fullcalendar"
 
 // Import local files
 //
@@ -20,3 +21,9 @@ import "trix"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+$(document).ready(function() {
+  $('#calendar').fullCalendar({
+    weekends: false
+  })
+});

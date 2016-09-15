@@ -64,6 +64,13 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    globals: {
+      $: 'jquery',
+      jQuery: 'jquery'
+    },
+    styles: {
+      fullcalendar: ['dist/fullcalendar.css'],
+      trix: ['dist/trix.css']
+    }
   }
 };
