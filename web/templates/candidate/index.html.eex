@@ -20,9 +20,13 @@
       <td><%= raw candidate.summary %></td>
 
       <td class="text-right">
-        <%= link "Show", to: candidate_path(@conn, :show, candidate), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: candidate_path(@conn, :edit, candidate), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" %>
+        <%= link to: candidate_path(@conn, :edit, candidate), class: "btn btn-default btn-xs" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+
+        <%= link to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
       </td>
     </tr>
 <% end %>
