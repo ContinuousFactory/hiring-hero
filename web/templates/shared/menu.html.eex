@@ -1,7 +1,9 @@
 <%= link "Home", to: "/" %> |
 <%= link "Candidates", to: candidate_path(@conn, :index) %> |
+<%= link "Interviewees", to: "#" %> |
+<%= link "Custom Interview Process", to: "#" %> |
 <%= link "Calendar", to:  page_path(@conn, :calendar) %> |
 <%= if @current_user do %>
-  <%= link @current_user.name, to: user_path(@conn, :show, @current_user) %> |
+  <%= link "Your Account", to: user_path(@conn, :show, @current_user) %> |
   <%= Hiringhero.Coherence.ViewHelpers.signout_link(@conn) %>
 <% end %>
