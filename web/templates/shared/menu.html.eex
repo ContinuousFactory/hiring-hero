@@ -2,6 +2,6 @@
 <%= link "Candidates", to: candidate_path(@conn, :index) %> |
 <%= link "Calendar", to:  page_path(@conn, :calendar) %> |
 <%= if @current_user do %>
-  <%= Hiringhero.Coherence.ViewHelpers.profile_link(@current_user, @conn) %> |
+  <%= link @current_user.name, to: user_path(@conn, :show, @current_user) %> |
   <%= Hiringhero.Coherence.ViewHelpers.signout_link(@conn) %>
 <% end %>

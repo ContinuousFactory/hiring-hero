@@ -1,2 +1,3 @@
-<h1>Showing User</h1>
-<b><%= first_name(@user) %></b> (<%= @user.id %>)
+<h3>Profile</h3>
+<b>Name: </b> <%= first_name(@user) %> <br />
+<b>Email: </b> <%= @user.email %>
