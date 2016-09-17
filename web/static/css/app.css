@@ -11,4 +11,18 @@ ul.nav a {
 
 .navbar {
   border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.btn-group-vertical {
+  margin-top: 0px;
+  width: 100%;
+}
+
+.btn-group-vertical .btn {
+  border-radius: 0px !important;
+}
+
+.no-padding-right {
+  padding-right: 0px;
 }

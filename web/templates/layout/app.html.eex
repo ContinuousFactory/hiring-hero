@@ -15,13 +15,20 @@
     <div class="container-full">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= render Hiringhero.Shared, "menu.html", current_user: @current_user, conn: @conn %>
+      <%= render Hiringhero.Shared, "header.html", current_user: @current_user, conn: @conn %>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+      <div class="row">
+        <div class="col-md-2 no-padding-right">
+          <%= render Hiringhero.Shared, "sidebar.html", current_user: @current_user, conn: @conn %>
+        </div>
 
-    </div> <!-- /container -->
+        <div class="col-md-10">
+          <main role="main">
+            <%= render @view_module, @view_template, assigns %>
+          </main>
+        </div>
+      </div>
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

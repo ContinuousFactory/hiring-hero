@@ -5,12 +5,6 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link "Home", to: "/" %> </li>
-        <li><%= link "Candidates", to: candidate_path(@conn, :index) %></li>
-        <li><%= link "Interviewees", to: "#" %></li>
-        <li><%= link "Custom Interview Process", to: "#" %></li>
-        <li><%= link "Calendar", to:  page_path(@conn, :calendar) %></li>
-
         <%= if @current_user do %>
           <li><%= link "Your Account", to: user_path(@conn, :show, @current_user) %> </li>
           <li style="line-height: 60px;"><%= Hiringhero.Coherence.ViewHelpers.signout_link(@conn) %></li>
