@@ -3,4 +3,4 @@
 <b>Email: </b> <%= @user.email %>  <br />
 <b>Organisation: </b> <%= organisation_name(@user.organisation) %> <br />
 
-<%= link "Change profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-primary btn-raised" %>
+<%= link "Change profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-raised" %>

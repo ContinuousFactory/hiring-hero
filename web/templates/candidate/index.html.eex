@@ -33,4 +33,4 @@
   </tbody>
 </table>
 
-<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-raised btn-primary" %>
+<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-raised btn-default" %>
