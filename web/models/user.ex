@@ -5,6 +5,7 @@ defmodule Hiringhero.User do
   schema "users" do
     field :name, :string
     field :email, :string
+    belongs_to :organisation, Organisation
 
     coherence_schema
 

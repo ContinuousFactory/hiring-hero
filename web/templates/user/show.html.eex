@@ -1,3 +1,6 @@
-<h3>Profile</h3>
+<h3>My profile</h3>
 <b>Name: </b> <%= first_name(@user) %> <br />
-<b>Email: </b> <%= @user.email %>
+<b>Email: </b> <%= @user.email %>  <br />
+<b>Organisation: </b> <%= organisation_name(@user.organisation) %> <br />
+
+<%= link "Change profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-primary btn-raised" %>
