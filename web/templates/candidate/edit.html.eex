@@ -1,3 +1,10 @@
+<br />
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link "Candidates", to: candidate_path(@conn, :index) %></li>
+  <li class="active">Edit</li>
+</ol>
+
 <h3>Edit candidate</h3>
 
 <%= render "form.html", changeset: @changeset,

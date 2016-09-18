@@ -5,32 +5,38 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
-    <%= error_tag f, :name %>
-  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= label f, :name, class: "control-label" %>
+        <%= text_input f, :name, class: "form-control" %>
+        <%= error_tag f, :name %>
+      </div>
 
-  <div class="form-group">
-    <%= label f, :email, class: "control-label" %>
-    <%= text_input f, :email, class: "form-control" %>
-    <%= error_tag f, :email %>
-  </div>
+      <div class="form-group">
+        <%= label f, :email, class: "control-label" %>
+        <%= text_input f, :email, class: "form-control" %>
+        <%= error_tag f, :email %>
+      </div>
 
-  <div class="form-group">
-    <%= label f, :document, class: "control-label" %>
-    <%= file_input f, :document, class: "form-control" %>
-    <%= error_tag f, :document %>
-  </div>
+      <div class="form-group">
+        <%= label f, :document, class: "control-label" %>
+        <%= file_input f, :document, class: "form-control" %>
+        <%= error_tag f, :document %>
+      </div>
+    </div>
 
-  <div class="form-group">
-    <%= label f, :summary, class: "control-label" %>
-    <%= hidden_input f, :summary, class: "form-control" %>
-    <trix-editor input="candidate_summary"></trix-editor>
-    <%= error_tag f, :summary %>
-  </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= label f, :summary, class: "control-label" %>
+        <%= hidden_input f, :summary, class: "form-control" %>
+        <trix-editor input="candidate_summary"></trix-editor>
+        <%= error_tag f, :summary %>
+      </div>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-raised btn-default" %>
+      <div class="form-group">
+        <%= submit "Submit", class: "btn btn-raised btn-default" %>
+      </div>
+    </div>
   </div>
 <% end %>

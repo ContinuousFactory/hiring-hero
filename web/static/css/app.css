@@ -26,3 +26,12 @@ ul.nav a {
 .no-padding-right {
   padding-right: 0px;
 }
+
+.alert {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.alert p {
+  margin-bottom: 0px;
+}
