@@ -1,7 +1,13 @@
-<h2>Show candidate</h2>
+<br />
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link "Candidates", to: candidate_path(@conn, :index) %></li>
+  <li class="active"><%= @candidate.email %></li>
+</ol>
+
+<h3><%= @candidate.name %></h3>
 
 <ul>
-
   <li>
     <strong>Name:</strong>
     <%= @candidate.name %>
@@ -31,5 +37,4 @@
 
 </ul>
 
-<%= link "Edit", to: candidate_path(@conn, :edit, @candidate) %>
-<%= link "Back", to: candidate_path(@conn, :index) %>
+<%= link "Edit", to: candidate_path(@conn, :edit, @candidate), class: "btn btn-raised btn-default" %>

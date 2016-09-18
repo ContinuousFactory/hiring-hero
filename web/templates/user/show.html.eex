@@ -1,3 +1,10 @@
+<br />
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link "Users", to: user_path(@conn, :index) %></li>
+  <li class="active"><%= @user.name %></li>
+</ol>
+
 <h3>My profile</h3>
 <b>Name: </b> <%= first_name(@user) %> <br />
 <b>Email: </b> <%= @user.email %>  <br />

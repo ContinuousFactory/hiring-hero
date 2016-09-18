@@ -13,6 +13,7 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 import "bootstrap-material-design"
+import "bootstrap-fileinput"
 import "trix"
 import "fullcalendar"
 
@@ -30,4 +31,8 @@ $(document).ready(function() {
   });
 
   $.material.init();
+
+  $('#candidate_document').fileinput({
+    'showUpload': false
+  });
 });

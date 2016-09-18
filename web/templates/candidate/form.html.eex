@@ -20,7 +20,10 @@
       </div>
 
       <div class="form-group">
-        <%= label f, :document, class: "control-label" %>
+        <%= label f, :document, class: "control-label" %> <br/ >
+        <%= tag(:img,
+          width: "100%",
+          src: Enum.join(["http://localhost:4000/", Hiringhero.Document.url({@candidate.document, @candidate})], "")) %>
         <%= file_input f, :document, class: "form-control" %>
         <%= error_tag f, :document %>
       </div>

@@ -1,3 +1,10 @@
+<br />
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><%= link "Users", to: user_path(@conn, :index) %></li>
+  <li class="active"><%= @user.name %></li>
+</ol>
+
 <h3>Edit profile</h3>
 
 <%= render "form.html", changeset: @changeset,
