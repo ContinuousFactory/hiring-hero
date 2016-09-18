@@ -8,4 +8,5 @@
 <h3>New candidate</h3>
 
 <%= render "form.html", changeset: @changeset,
+                        candidate: @candidate,
                         action: candidate_path(@conn, :create) %>

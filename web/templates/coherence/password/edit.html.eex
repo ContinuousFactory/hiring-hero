@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-offset-3 col-md-6">
-    <h3>Create a New Password</h3>
+    <h1>Hiring Hero</h1>
 
     <%= form_for @changeset, password_path(@conn, :update, @changeset.data), [as: :password], fn f  -> %>
 
@@ -19,7 +19,7 @@
       </div>
 
       <div class="form-group">
-        <%= submit "Update Password", class: "btn btn-primary" %>
+        <%= submit "Update Password", class: "btn btn-primary btn-raised" %>
         <%= link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn" %>
       </div>
     <% end %>

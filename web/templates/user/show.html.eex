@@ -6,8 +6,24 @@
 </ol>
 
 <h3>My profile</h3>
-<b>Name: </b> <%= first_name(@user) %> <br />
-<b>Email: </b> <%= @user.email %>  <br />
-<b>Organisation: </b> <%= organisation_name(@user.organisation) %> <br />
 
-<%= link "Change profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-raised" %>
+<div class="panel panel-default">
+  <div class="panel-heading">Basic info</div>
+  <div class="panel-body">
+    <b>Name: </b> <%= @user.name %> <br />
+    <b>Email: </b> <%= @user.email %>  <br />
+    <b>Last loggged in:</b> <%= @user.last_sign_in_at %> <br />
+    <b>Account active since:</b> <%= @user.inserted_at %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Organisation</div>
+  <div class="panel-body">
+    <b>Name: </b> <%= organisation_name(@user.organisation) %>
+  </div>
+</div>
+
+
+
+<%= link "Update profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-raised" %>

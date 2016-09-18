@@ -9,8 +9,9 @@ defmodule Hiringhero.CandidateController do
   end
 
   def new(conn, _params) do
+    candidate = %Candidate{}
     changeset = Candidate.changeset(%Candidate{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, candidate: candidate)
   end
 
   def create(conn, %{"candidate" => candidate_params}) do

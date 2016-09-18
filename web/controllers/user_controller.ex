@@ -17,6 +17,7 @@ defmodule Hiringhero.UserController do
 
   def edit(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
+    user = Repo.preload(user, :organisation)
     changeset = User.changeset(user)
     render(conn, "edit.html", user: user, changeset: changeset)
   end
