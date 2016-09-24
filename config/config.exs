@@ -32,7 +32,7 @@ config :coherence,
   repo: Hiringhero.Repo,
   module: Hiringhero,
   logged_out_url: "/",
-  email_from: {"Your Name", "yourname@example.com"},
+  email_from: {"Long Nguyen", "long@hiringhero.co"},
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :invitable, :registerable]
 
 config :coherence, Hiringhero.Coherence.Mailer,

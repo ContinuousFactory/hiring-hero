@@ -19,7 +19,7 @@ defmodule Hiringhero.Mixfile do
   def application do
     [mod: {Hiringhero, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :coherence, :arc, :arc_ecto]]
+                    :phoenix_ecto, :postgrex, :coherence, :arc, :arc_ecto, :bamboo]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,7 +39,9 @@ defmodule Hiringhero.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:coherence, "~> 0.3"},
-     {:arc_ecto, "~> 0.4.3"}]
+     {:arc_ecto, "~> 0.4.3"},
+     {:bamboo, "~> 0.7"},
+     {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

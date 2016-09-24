@@ -24,6 +24,6 @@ defmodule Hiringhero.Candidate do
   end
 
   defp init_status(struct) do
-    %{ struct | status: "pending" }
+    %{struct | status: "pending"}
   end
 end
