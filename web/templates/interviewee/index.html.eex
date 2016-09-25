@@ -1,0 +1,36 @@
+<br />
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Interviewees</li>
+</ol>
+
+<h3>Interviewees - <%= @current_organisation.name %></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for interviewee <- @interviewees do %>
+    <tr>
+      <td><%= interviewee.name %></td>
+      <td><%= interviewee.email %></td>
+
+      <td class="text-right">
+        <%= link to: interviewee_path(@conn, :edit, interviewee), class: "btn btn-default btn-xs" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+
+        <%= link to: interviewee_path(@conn, :delete, interviewee), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

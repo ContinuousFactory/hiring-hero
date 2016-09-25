@@ -37,9 +37,12 @@ defmodule Hiringhero.Router do
   scope "/", Hiringhero do
     pipe_through :protected
 
-    get "/", PageController, :dashboard
     resources "/users", UserController
     resources "/candidates", CandidateController
+
+    get "/", PageController, :dashboard
     get "/calendar", PageController, :calendar
+
+    get "/interviewees", IntervieweeController, :index
   end
 end
