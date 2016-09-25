@@ -41,6 +41,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">Organisation</div>
         <div class="panel-body">
+          <div class="form-group">
+            <%= inputs_for f, :my_organisation, fn fo -> %>
+              <%= label fo, :name, class: "control-label" %>
+              <%= text_input fo, :name, class: "form-control" %>
+              <%= error_tag fo, :name %>
+            <% end %>
+          </div>
         </div>
       </div>
 

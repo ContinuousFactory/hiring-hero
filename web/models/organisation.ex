@@ -1,10 +1,13 @@
 defmodule Hiringhero.Organisation do
   use Hiringhero.Web, :model
+  alias Hiringhero.User
 
   schema "organisations" do
     field :name, :string
-    has_many :users, User
-    timestamps()
+    has_many :members, User
+    belongs_to :owner, User
+    
+    timestamps
   end
 
   @doc """

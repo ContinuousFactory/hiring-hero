@@ -20,7 +20,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">Organisation</div>
   <div class="panel-body">
-    <b>Name: </b> <%= organisation_name(@user.organisation) %>
+    <b>Name: </b> <%= organisation_name(@user.my_organisation) %>
   </div>
 </div>
 
