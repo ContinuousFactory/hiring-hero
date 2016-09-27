@@ -44,5 +44,6 @@ defmodule Hiringhero.Router do
     get "/calendar", PageController, :calendar
 
     get "/interviewees", IntervieweeController, :index
+    post "/inverviewees/invite", IntervieweeController, :invite
   end
 end

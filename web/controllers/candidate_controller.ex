@@ -55,8 +55,6 @@ defmodule Hiringhero.CandidateController do
   def delete(conn, %{"id" => id}) do
     candidate = Repo.get!(Candidate, id)
 
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
     Repo.delete!(candidate)
 
     conn

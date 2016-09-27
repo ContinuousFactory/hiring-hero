@@ -36,6 +36,7 @@ defmodule Hiringhero.Web do
 
       import Hiringhero.Router.Helpers
       import Hiringhero.Gettext
+      import Hiringhero.Common
     end
   end
 

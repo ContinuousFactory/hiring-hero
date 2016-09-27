@@ -17,7 +17,8 @@ defmodule Hiringhero.User do
 
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, [:name, :email] ++ coherence_fields)
+    |> Hiringhero.Repo.preload([:my_organisation])
+    |> cast(params, [:name, :email, :organisation_id] ++ coherence_fields)
     |> cast_assoc(:my_organisation, require: true)
     |> validate_required([:name, :email])
     |> validate_coherence(params)
