@@ -17,9 +17,7 @@ defmodule Hiringhero.IntervieweeController do
 
     if resource do
       changeset = User.changeset(resource, %{
-        organisation_id: conn.assigns.current_organisation.id,
-        name: resource.name,
-        email: resource.email
+        organisation_id: conn.assigns.current_organisation.id
       })
 
       case Repo.update(changeset) do
