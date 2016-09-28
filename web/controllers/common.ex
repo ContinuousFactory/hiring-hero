@@ -7,7 +7,9 @@ defmodule Hiringhero.Common do
     current_user = conn.assigns.current_user
     current_user = Repo.preload(current_user, [:my_organisation])
     current_organisation = current_user.my_organisation
-    current_organisation = Repo.preload(current_organisation, [:members])
+    if current_organisation do
+      current_organisation = Repo.preload(current_organisation, [:members])
+    end
     assign(conn, :current_organisation, current_organisation)
   end
 end
