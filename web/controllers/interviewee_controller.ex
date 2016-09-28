@@ -5,6 +5,8 @@ defmodule Hiringhero.IntervieweeController do
   alias Hiringhero.Repo
   alias Hiringhero.User
 
+  import Coherence.InvitationController, only: [create: 2]
+
   plug :load_core_info when action in [:index, :invite]
 
   def index(conn, _params) do
@@ -32,8 +34,7 @@ defmodule Hiringhero.IntervieweeController do
       end
     else
       conn
-      |> put_flash(:error, "Nothing happen.")
-      |> redirect(to: interviewee_path(conn, :index))
+      |> create(%{"invitation" =>  %{ "email" => email, "name" => "NA" }})
     end
   end
 end
