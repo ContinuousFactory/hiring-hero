@@ -39,3 +39,7 @@ ul.nav a {
 .col-md-10 {
   padding-right: 25px;
 }
+
+.btn-sidebar {
+  text-align: left;
+}

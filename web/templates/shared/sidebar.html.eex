@@ -1,7 +1,26 @@
 <div class="btn-group-vertical" role="group">
-  <%= link "Dashboard", to: "/", class: "btn btn-raised" %>
-  <%= link "Candidates", to: candidate_path(@conn, :index), class: "btn btn-raised" %>
-  <%= link "Interviewees", to: interviewee_path(@conn, :index), class: "btn btn-raised" %>
-  <%= link "Interview Stages", to: "#", class: "btn btn-raised" %>
-  <%= link "Calendar", to:  page_path(@conn, :calendar), class: "btn btn-raised" %>
+  <%= link to: "/", class: "btn btn-raised btn-sidebar" do %>
+    <span class="glyphicon glyphicon-home"></span>
+    Dashboard
+  <% end %>
+  <%= link to: candidate_path(@conn, :index), class: "btn btn-raised btn-sidebar" do %>
+    <span class="glyphicon glyphicon-folder-close"></span>
+    Candidates
+  <% end %>
+  <%= link to: interviewee_path(@conn, :index), class: "btn btn-raised btn-sidebar" do %>
+    <span class="glyphicon glyphicon-user"></span>
+    Interviewees
+  <% end %>
+  <%= link to: "#", class: "btn btn-raised btn-sidebar" do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Job Board
+  <% end %>
+  <%= link to: "#", class: "btn btn-raised btn-sidebar" do %>
+    <span class="glyphicon glyphicon-cog"></span>
+    Interview Stages
+  <% end %>
+  <%= link to:  page_path(@conn, :calendar), class: "btn btn-raised btn-sidebar" do %>
+    <span class="glyphicon glyphicon-calendar"></span>
+    Calendar
+  <% end %>
 </div>
