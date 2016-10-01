@@ -42,7 +42,9 @@ defmodule Hiringhero.IntervieweeController do
       end
     else
       conn
-      |> create(%{"invitation" =>  %{ "email" => email, "name" => "NA" }})
+      |> create(%{"invitation" =>  %{ "email" => email,
+                                      "name" => "NA",
+                                      "organisation_id" => conn.assigns.current_organisation.id }})
     end
   end
 end
