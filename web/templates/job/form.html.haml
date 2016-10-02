@@ -10,7 +10,8 @@
 
   .form-group
     = label f, :description, class: "control-label"
-    = text_input f, :description, class: "form-control"
+    = hidden_input f, :description, class: "form-control"
+    %trix-editor {"input" => "job_description"}
     = error_tag f, :description
 
   .form-group
