@@ -11,7 +11,7 @@ config :hiringhero,
 
 # Configures the endpoint
 config :hiringhero, Hiringhero.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "lvh.me"],
   secret_key_base: "ZhsDc61fTL9SFjzJviLT+E/rwJaowB+AOkIzPCsjTIJ2K27T3EADBPyI6NmQeMah",
   render_errors: [view: Hiringhero.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Hiringhero.PubSub,

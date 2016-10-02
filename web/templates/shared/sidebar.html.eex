@@ -11,7 +11,7 @@
     <span class="glyphicon glyphicon-user"></span>
     Interviewees
   <% end %>
-  <%= link to: "#", class: "btn btn-raised btn-sidebar" do %>
+  <%= link to: job_path(@conn, :index), class: "btn btn-raised btn-sidebar" do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Job Board
   <% end %>

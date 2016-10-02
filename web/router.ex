@@ -46,5 +46,7 @@ defmodule Hiringhero.Router do
 
     get "/interviewees", IntervieweeController, :index
     post "/inverviewees/invite", IntervieweeController, :invite
+
+    resources "/jobs", JobController
   end
 end
