@@ -41,7 +41,8 @@ defmodule Hiringhero.Mixfile do
      {:coherence, "~> 0.3"},
      {:arc_ecto, "~> 0.4.3"},
      {:bamboo, "~> 0.7"},
-     {:credo, "~> 0.4", only: [:dev, :test]}]
+     {:credo, "~> 0.4", only: [:dev, :test]},
+     {:phoenix_haml, "~> 0.2.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

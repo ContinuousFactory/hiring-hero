@@ -26,6 +26,8 @@ config :logger, :console,
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
 
+config :phoenix, :template_engines, haml: PhoenixHaml.Engine
+
 # %% Coherence Configuration %%   Don't remove this line
 config :coherence,
   user_schema: Hiringhero.User,
