@@ -14,6 +14,7 @@ defmodule Hiringhero.JobController do
   end
 
   def create(conn, %{"job" => job_params}) do
+    job_params = Map.merge(job_params, %{"organisation_id" => conn.assigns.current_organisation.id})
     changeset = Job.changeset(%Job{}, job_params)
 
     case Repo.insert(changeset) do

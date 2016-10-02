@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Hiringhero.Organisation do
   use Hiringhero.Web, :model
   alias Hiringhero.User
@@ -9,6 +7,8 @@ defmodule Hiringhero.Organisation do
     field :subdomain, :string
 
     has_many :members, User
+    has_many :jobs, Job
+
     belongs_to :owner, User
 
     timestamps

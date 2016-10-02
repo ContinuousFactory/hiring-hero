@@ -11,7 +11,7 @@
     - for job <- @jobs do
       %tr
         %td= job.title
-        %td= job.description
+        %td= raw job.description
 
         %td.text-right
           = link "Show", to: job_path(@conn, :show, job), class: "btn btn-default btn-xs btn-raised"

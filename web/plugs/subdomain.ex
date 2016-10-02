@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Hiringhero.Subdomain do
   import Plug.Conn
 
@@ -15,9 +13,7 @@ defmodule Hiringhero.Subdomain do
     else
       org = user.organisation
     end
-    IEx.pry
     assign(conn, :subdomain, org.subdomain)
-    conn = %{conn | request_path: "/#{org.subdomain}#{conn.request_path}"}
-    conn
+    assign(conn, :current_organisation, org)
   end
 end

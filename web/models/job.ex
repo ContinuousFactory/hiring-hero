@@ -5,15 +5,14 @@ defmodule Hiringhero.Job do
     field :title, :string
     field :description, :string
 
+    belongs_to :organisation, Organisation
+
     timestamps()
   end
 
-  @doc """
-  Builds a changeset based on the `struct` and `params`.
-  """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :description])
-    |> validate_required([:title, :description])
+    |> cast(params, [:title, :description, :organisation_id])
+    |> validate_required([:title, :description, :organisation_id])
   end
 end
