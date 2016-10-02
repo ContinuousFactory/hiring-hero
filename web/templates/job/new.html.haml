@@ -1,4 +1,13 @@
-%h2 New job
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li
+    = link "Job Board", to: job_path(@conn, :index)
+  %li.active
+    New Job
+
+%h3 New job
 
 = render "form.html", changeset: @changeset, action: job_path(@conn, :create)
 

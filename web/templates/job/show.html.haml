@@ -1,4 +1,13 @@
-%h2 Show job
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li
+    = link "Job Board", to: job_path(@conn, :index)
+  %li.active
+    = @job.title
+
+%h3 Show job
   %ul
     %li
       %strong Title:
