@@ -9,6 +9,8 @@ defmodule Hiringhero.Candidate do
     field :summary, :string
     field :document, Hiringhero.Document.Type
 
+    belongs_to :job, Job
+
     timestamps()
   end
 
@@ -18,7 +20,7 @@ defmodule Hiringhero.Candidate do
   def changeset(struct, params \\ %{}) do
     struct
     |> init_status
-    |> cast(params, [:name, :email, :status, :summary])
+    |> cast(params, [:name, :email, :status, :summary, :job_id])
     |> cast_attachments(params, [:document])
     |> validate_required([:name, :email, :status, :summary])
   end

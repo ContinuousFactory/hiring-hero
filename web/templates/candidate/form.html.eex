@@ -29,6 +29,11 @@
         <%= file_input f, :document, class: "form-control" %>
         <%= error_tag f, :document %>
       </div>
+
+      <div class="form-group">
+        <%= label f, :applying_for, class: "control-label" %> <br/ >
+        <%= select f, :job_id, jobs_option_available(@current_organisation.id), class: "form-control"  %>
+      </div>
     </div>
 
     <div class="col-md-6">

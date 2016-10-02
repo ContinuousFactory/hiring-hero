@@ -11,7 +11,11 @@ defmodule Hiringhero.CandidateController do
   def new(conn, _params) do
     candidate = %Candidate{}
     changeset = Candidate.changeset(%Candidate{})
-    render(conn, "new.html", changeset: changeset, candidate: candidate)
+    render(conn, "new.html",
+      changeset: changeset,
+      candidate: candidate,
+      current_organisation: conn.assigns.current_organisation
+    )
   end
 
   def create(conn, %{"candidate" => candidate_params}) do
@@ -35,7 +39,11 @@ defmodule Hiringhero.CandidateController do
   def edit(conn, %{"id" => id}) do
     candidate = Repo.get!(Candidate, id)
     changeset = Candidate.changeset(candidate)
-    render(conn, "edit.html", candidate: candidate, changeset: changeset)
+    render(conn, "edit.html",
+      candidate: candidate,
+      changeset: changeset,
+      current_organisation: conn.assigns.current_organisation
+    )
   end
 
   def update(conn, %{"id" => id, "candidate" => candidate_params}) do

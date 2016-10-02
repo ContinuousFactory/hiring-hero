@@ -1,9 +1,12 @@
 defmodule Hiringhero.Job do
   use Hiringhero.Web, :model
+  alias Hiringhero.Repo
 
   schema "jobs" do
     field :title, :string
     field :description, :string
+
+    has_many :candidates, Candidate
 
     belongs_to :organisation, Organisation
 
