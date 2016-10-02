@@ -1,0 +1,11 @@
+%h2 Show job
+  %ul
+    %li
+      %strong Title:
+        = @job.title
+    %li
+      %strong Description:
+        = @job.description
+
+= link "Edit", to: job_path(@conn, :edit, @job)
+= link "Back", to: job_path(@conn, :index)

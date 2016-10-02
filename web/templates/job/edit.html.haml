@@ -1,0 +1,5 @@
+%h2 Edit job
+
+= render "form.html", changeset: @changeset, action: job_path(@conn, :update, @job)
+
+= link "Back", to: job_path(@conn, :index)
