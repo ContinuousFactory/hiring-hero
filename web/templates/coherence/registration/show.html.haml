@@ -1,0 +1,17 @@
+%h3 Show account
+
+%ul
+  %li
+    %strong Name:
+    = @user.name
+
+  - unless (login_field = Coherence.Config.login_field) == :email do
+     %li
+       %strong= humanize login_field
+       = Map.get(@user, login_field)
+
+  %li
+    %strong Email:
+    = @user.email
+
+= link "Edit", to: registration_path(@conn, :edit, @user)

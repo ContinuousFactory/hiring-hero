@@ -1,0 +1,5 @@
+.row
+  .col-md-offset-4.col-md-4
+    %h3 Hiring hero
+
+    = render "form.html", changeset: @changeset, label: "Register", required: [required: ""], action: registration_path(@conn, :create)

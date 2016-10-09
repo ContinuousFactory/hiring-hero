@@ -1,0 +1,3 @@
+%h3 Edit Account
+
+= render "form.html", changeset: @changeset, label: "Update", required: [], action: registration_path(@conn, :update, @user)
