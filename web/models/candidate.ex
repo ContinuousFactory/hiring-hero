@@ -27,7 +27,7 @@ defmodule Hiringhero.Candidate do
     |> init_status
     |> cast(params, [:name, :email, :status, :summary, :job_id, :organisation_id])
     |> cast_attachments(params, [:document])
-    |> validate_required([:name, :email, :status, :summary])
+    |> validate_required([:name, :email, :status, :summary, :job_id, :organisation_id])
   end
 
   defp init_status(struct) do

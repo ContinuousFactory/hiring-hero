@@ -4,7 +4,7 @@ defmodule Hiringhero.JobController do
   alias Hiringhero.Job
 
   def index(conn, _params) do
-    jobs = Repo.all(Job)
+    jobs = Repo.all(Job.with_org(conn.assigns.current_organisation.id))
     render(conn, "index.html", jobs: jobs)
   end
 

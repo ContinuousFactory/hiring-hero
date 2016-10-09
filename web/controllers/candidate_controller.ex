@@ -19,6 +19,7 @@ defmodule Hiringhero.CandidateController do
   end
 
   def create(conn, %{"candidate" => candidate_params}) do
+    candidate_params = Map.merge(candidate_params, %{"organisation_id" => conn.assigns.current_organisation.id})
     changeset = Candidate.changeset(%Candidate{}, candidate_params)
 
     case Repo.insert(changeset) do
@@ -27,7 +28,7 @@ defmodule Hiringhero.CandidateController do
         |> put_flash(:info, "Candidate created successfully.")
         |> redirect(to: candidate_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", candidate: %Candidate{}, changeset: changeset)
     end
   end
 
