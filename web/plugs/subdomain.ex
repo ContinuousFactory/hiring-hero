@@ -17,8 +17,8 @@ defmodule Hiringhero.Subdomain do
     end
 
     if org do
-      assign(conn, :subdomain, org.subdomain)
-      assign(conn, :current_organisation, org)
+      conn = assign(conn, :subdomain, org.subdomain)
+      conn = assign(conn, :current_organisation, org)
     end
     conn
   end
