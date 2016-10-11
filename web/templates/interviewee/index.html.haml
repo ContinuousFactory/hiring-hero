@@ -10,7 +10,7 @@
     .panel.panel-default
       .panel-heading Invite new interviewee
       .panel-body
-        - form_tag(interviewee_path(@conn, :invite), method: :post) 
+        = form_tag(interviewee_path(@conn, :invite), method: :post) 
           .form-group
             = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control"
             = tag :input, type: :submit, value: "Invite", class: "btn btn-raised btn-sm"
@@ -27,8 +27,7 @@
         %td= interviewee.name
         %td= interviewee.email
         %td.text-right
-          = link to: "#", class: "btn btn-default btn-xs" 
+          - link to: "#", class: "btn btn-default btn-xs" do
             %span.glyphicon.glyphicon-edit
-          = link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" 
+          - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" do
             %span.glyphicon.glyphicon-trash
-

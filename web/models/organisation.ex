@@ -2,10 +2,12 @@ defmodule Hiringhero.Organisation do
   use Hiringhero.Web, :model
   alias Hiringhero.User
   alias Hiringhero.Job
+  use Arc.Ecto.Schema
 
   schema "organisations" do
     field :name, :string
     field :subdomain, :string
+    field :logo, Hiringhero.Document.Type
 
     has_many :members, User
     has_many :jobs, Job
@@ -23,6 +25,7 @@ defmodule Hiringhero.Organisation do
 
     organisation
     |> cast(params, [:name, :subdomain, :owner_id])
+    |> cast_attachments(params, [:logo])
     |> validate_required([:name, :subdomain])
   end
 

@@ -11,6 +11,12 @@
         <div class="panel-heading">Basic info</div>
         <div class="panel-body">
           <div class="form-group">
+            <%= label f, :avatar, class: "control-label" %>
+            <%= file_input f, :avatar, class: "form-control" %>
+            <%= error_tag f, :avatar %>
+          </div>
+
+          <div class="form-group">
             <%= label f, :name, class: "control-label" %>
             <%= text_input f, :name, class: "form-control" %>
             <%= error_tag f, :name %>
@@ -41,13 +47,20 @@
       <div class="panel panel-default">
         <div class="panel-heading">Organisation</div>
         <div class="panel-body">
-          <div class="form-group">
-            <%= inputs_for f, :my_organisation, fn fo -> %>
+          <%= inputs_for f, :my_organisation, fn fo -> %>
+            <div class="form-group">
               <%= label fo, :name, class: "control-label" %>
               <%= text_input fo, :name, class: "form-control" %>
               <%= error_tag fo, :name %>
-            <% end %>
-          </div>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :logo, class: "control-label" %>
+              <%= file_input fo, :logo, class: "form-control" %>
+              <%= error_tag fo, :logo %>
+            </div>
+
+          <% end %>
         </div>
       </div>
 

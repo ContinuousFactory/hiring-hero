@@ -1,0 +1,9 @@
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li= link "Users", to: user_path(@conn, :index)
+  %li.active= @user.name
+
+%h3 Edit profile
+= render "form.html", changeset: @changeset, action: user_path(@conn, :update, @user)

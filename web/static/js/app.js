@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   $.material.init();
 
-  $('#candidate_document').fileinput({
+  $('#candidate_document, #user_avatar, #user_my_organisation_logo').fileinput({
     'showUpload': false
   });
 });

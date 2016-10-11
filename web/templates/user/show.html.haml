@@ -1,0 +1,31 @@
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li= link "Users", to: user_path(@conn, :index)
+  %li.active= @user.name
+
+%h3 My profile
+.panel.panel-default
+  .panel-heading Basic info
+  .panel-body
+    %b Name:
+    = @user.name
+    %br
+    %b Email:
+    = @user.email
+    %br
+    %b Last loggged in:
+    = @user.last_sign_in_at
+    %br
+    %b Account active since:
+    = @user.inserted_at
+
+.panel.panel-default
+  .panel-heading Organisation
+  .panel-body
+    %b Name:
+    = organisation_name(@user.my_organisation)
+
+= link "Update profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-raised"
+
