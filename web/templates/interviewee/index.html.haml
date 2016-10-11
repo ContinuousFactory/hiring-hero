@@ -1,0 +1,34 @@
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li.active Interviewees
+
+%h3=Interviewees #{current_org_name}
+.row
+  .col-md-5
+    .panel.panel-default
+      .panel-heading Invite new interviewee
+      .panel-body
+        - form_tag(interviewee_path(@conn, :invite), method: :post) 
+          .form-group
+            = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control"
+            = tag :input, type: :submit, value: "Invite", class: "btn btn-raised btn-sm"
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th
+  %tbody
+    - for interviewee <- @interviewees do
+      %tr
+        %td= interviewee.name
+        %td= interviewee.email
+        %td.text-right
+          = link to: "#", class: "btn btn-default btn-xs" 
+            %span.glyphicon.glyphicon-edit
+          = link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" 
+            %span.glyphicon.glyphicon-trash
+
