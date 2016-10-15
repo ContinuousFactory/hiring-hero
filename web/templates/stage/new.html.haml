@@ -1,3 +1,12 @@
-%h2 New stage
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li
+    = link "Interview Stages", to: stage_path(@conn, :index)
+  %li.active
+    New
+
+%h3 New stage
 = render "form.html", changeset: @changeset, action: stage_path(@conn, :create)
 

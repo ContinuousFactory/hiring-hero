@@ -1,4 +1,13 @@
-%h2 Show stage
+%br
+%ol.breadcrumb
+  %li
+    %a{:href => "/"} Home
+  %li
+    = link "Interview Stages", to: stage_path(@conn, :index)
+  %li.active
+    = @stage.name
+
+%h3= @stage.name
 %ul
   %li
     %strong Name:
