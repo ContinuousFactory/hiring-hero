@@ -1,0 +1,20 @@
+.btn-group-vertical{:role => "group"}
+  - link to: "/", class: "btn btn-raised btn-sidebar" do
+    %span.glyphicon.glyphicon-home 
+    Dashboard
+  - link to: candidate_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+    %span.glyphicon.glyphicon-folder-close 
+     Candidates
+  - link to: interviewee_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+    %span.glyphicon.glyphicon-user
+    Interviewees
+  - link to: job_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+    %span.glyphicon.glyphicon-list-alt
+    Job Board
+  - link to: stage_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+    %span.glyphicon.glyphicon-cog
+    Interview Stages
+  - link to:  page_path(@conn, :calendar), class: "btn btn-raised btn-sidebar" do 
+    %span.glyphicon.glyphicon-calendar
+    Calendar
+
