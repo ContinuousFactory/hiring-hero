@@ -5,21 +5,19 @@
   %li.active
     Interview Stages 
 
-%h3 Interview Stages
-%table.table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th
-  %tbody
-    - for stage <- @stages do
-      %tr
-        %td= stage.name
-        %td= stage.description
-        %td.text-right
-          = link "Show", to: stage_path(@conn, :show, stage), class: "btn btn-default btn-raised btn-xs"
-          = link "Edit", to: stage_path(@conn, :edit, stage), class: "btn btn-default btn-raised btn-xs"
-          = link "Delete", to: stage_path(@conn, :delete, stage), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-raised btn-xs"
+.row
+  - for stage <- @stages do
+    .col-xs-18.col-sm-6.col-md-3
+      .thumbnail.hiring-card
+        .caption
+          %h4= stage.name 
+          %p= stage.description
+          - link to: stage_path(@conn, :show, stage), class: "btn btn-default btn-raised btn-xs" do
+            %i.glyphicon.glyphicon-eye-open
+          - link to: stage_path(@conn, :edit, stage), class: "btn btn-default btn-raised btn-xs" do
+            %i.glyphicon.glyphicon-edit
+          - link to: stage_path(@conn, :delete, stage), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-raised btn-xs" do
+            %i.glyphicon.glyphicon-trash
+
 
 = link "New stage", to: stage_path(@conn, :new), class: "btn btn-default btn-raised btn-xs"
