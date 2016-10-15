@@ -1,0 +1,17 @@
+%h2 Listing stages
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th
+  %tbody
+    - for stage <- @stages do
+      %tr
+        %td= stage.name
+        %td= stage.description
+        %td.text-right
+          = link "Show", to: stage_path(@conn, :show, stage), class: "btn btn-default btn-xs"
+          = link "Edit", to: stage_path(@conn, :edit, stage), class: "btn btn-default btn-xs"
+          = link "Delete", to: stage_path(@conn, :delete, stage), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+= link "New stage", to: stage_path(@conn, :new)

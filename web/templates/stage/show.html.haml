@@ -1,0 +1,14 @@
+%h2 Show stage
+%ul
+  %li
+    %strong Name:
+    = @stage.name
+  %li
+    %strong Description:
+    = @stage.description
+  %li
+    %strong Organisation:
+    = @stage.organisation_id
+
+= link "Edit", to: stage_path(@conn, :edit, @stage)
+

@@ -1,6 +1,0 @@
-<h2>Edit stage</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: stage_path(@conn, :update, @stage) %>
-
-<%= link "Back", to: stage_path(@conn, :index) %>
