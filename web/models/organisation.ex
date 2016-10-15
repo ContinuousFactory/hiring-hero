@@ -2,6 +2,7 @@ defmodule Hiringhero.Organisation do
   use Hiringhero.Web, :model
   alias Hiringhero.User
   alias Hiringhero.Job
+  alias Hiringhero.Stage
   use Arc.Ecto.Schema
 
   schema "organisations" do
@@ -11,15 +12,13 @@ defmodule Hiringhero.Organisation do
 
     has_many :members, User
     has_many :jobs, Job
+    has_many :stages, Stage
 
     belongs_to :owner, User
 
     timestamps
   end
 
-  @doc """
-  Builds a changeset based on the `struct` and `params`.
-  """
   def changeset(organisation, params \\ %{}) do
     params = set_subdomain(params)
 

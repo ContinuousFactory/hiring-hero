@@ -22,8 +22,8 @@ defmodule Hiringhero.Job do
   end
 
   def with_org(organisation_id) do
-    from c in Job,
-      where: c.organisation_id == ^organisation_id,
-      select: c
+    from j in Job,
+      where: j.organisation_id == ^organisation_id,
+      select: j
   end
 end

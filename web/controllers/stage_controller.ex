@@ -4,7 +4,7 @@ defmodule Hiringhero.StageController do
   alias Hiringhero.Stage
 
   def index(conn, _params) do
-    stages = Repo.all(Stage)
+    stages = Repo.all(Stage.with_org(conn.assigns.current_organisation.id))
     render(conn, "index.html", stages: stages)
   end
 
@@ -14,6 +14,7 @@ defmodule Hiringhero.StageController do
   end
 
   def create(conn, %{"stage" => stage_params}) do
+    stage_params = Map.merge(stage_params, %{"organisation_id" => conn.assigns.current_organisation.id})
     changeset = Stage.changeset(%Stage{}, stage_params)
 
     case Repo.insert(changeset) do
