@@ -7407,7 +7407,7 @@ var _elm_lang$html$Html$menuitem = _elm_lang$html$Html$node('menuitem');
 var _elm_lang$html$Html$menu = _elm_lang$html$Html$node('menu');
 
 var _user$project$App$main = {
-	main: _elm_lang$html$Html$text('Nice!')
+	main: _elm_lang$html$Html$text('List questions')
 };
 
 var Elm = {};

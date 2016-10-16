@@ -35,4 +35,8 @@ $(document).ready(function() {
   $('#candidate_document, #user_avatar, #user_my_organisation_logo').fileinput({
     'showUpload': false
   });
+
 });
+
+const elmapp = document.querySelector('#elm-questions');
+const elmApp = Elm.App.embed(elmapp);
