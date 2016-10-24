@@ -6,4 +6,4 @@
   %li.active= @user.name
 
 %h3 Edit profile
-= render "form.html", changeset: @changeset, action: user_path(@conn, :update, @user)
+= render "form.html", changeset: @changeset, action: user_path(@conn, :update, @user), user: @user

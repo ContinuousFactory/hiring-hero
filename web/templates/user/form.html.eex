@@ -55,6 +55,10 @@
             </div>
 
             <div class="form-group">
+              <%= tag(:img,
+                width: "40%",
+                src: Enum.join(["http://localhost:4000/", Hiringhero.Logo.url({@user.my_organisation.logo, @user.my_organisation})], "")) %>
+
               <%= label fo, :logo, class: "control-label" %>
               <%= file_input fo, :logo, class: "form-control" %>
               <%= error_tag fo, :logo %>

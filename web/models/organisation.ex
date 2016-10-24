@@ -8,7 +8,7 @@ defmodule Hiringhero.Organisation do
   schema "organisations" do
     field :name, :string
     field :subdomain, :string
-    field :logo, Hiringhero.Document.Type
+    field :logo, Hiringhero.Logo.Type
 
     has_many :members, User
     has_many :jobs, Job
