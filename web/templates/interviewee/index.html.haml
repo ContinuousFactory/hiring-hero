@@ -4,13 +4,13 @@
     %a{:href => "/"} Home
   %li.active Interviewees
 
-%h3=Interviewees #{current_org_name}
+%h3 Interviewees
 .row
   .col-md-5
     .panel.panel-default
       .panel-heading Invite new interviewee
       .panel-body
-        = form_tag(interviewee_path(@conn, :invite), method: :post) 
+        = form_tag(interviewee_path(@conn, :invite))
           .form-group
             = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control"
             = tag :input, type: :submit, value: "Invite", class: "btn btn-raised btn-sm"
