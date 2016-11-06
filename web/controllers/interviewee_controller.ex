@@ -2,8 +2,7 @@ defmodule Hiringhero.IntervieweeController do
   use Hiringhero.Web, :controller
   Coherence.Authentication.Session
 
-  alias Hiringhero.Repo
-  alias Hiringhero.User
+  alias Hiringhero.{Repo, User}
 
   import Coherence.InvitationController, only: [create: 2]
 

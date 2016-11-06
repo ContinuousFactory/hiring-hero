@@ -37,6 +37,3 @@ $(document).ready(function() {
   });
 
 });
-
-const elmapp = document.querySelector('#elm-questions');
-const elmApp = Elm.App.embed(elmapp);
