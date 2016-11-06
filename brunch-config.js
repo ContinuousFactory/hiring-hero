@@ -42,8 +42,7 @@ exports.config = {
     // Dependencies and current project directories to watch
     watched: [
       "web/static",
-      "test/static",
-      "web/elm"
+      "test/static"
     ],
 
     // Where to compile files to
@@ -72,7 +71,6 @@ exports.config = {
     styles: {
       fullcalendar: ['dist/fullcalendar.css'],
       trix: ['dist/trix.css'],
-      'bootstrap-material-design': ['dist/css/bootstrap-material-design.css'],
       'bootstrap-fileinput': ['css/fileinput.css']
     }
   }

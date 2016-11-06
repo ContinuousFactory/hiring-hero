@@ -4,12 +4,12 @@
       %p Oops, something went wrong! Please check the errors below.
 
   .form-group
-    = required_label f, :name, class: "control-label" 
+    = required_label f, :name, class: "control-label"
     = text_input f, :name, class: "form-control", required: ""
     = error_tag f, :name
 
   .form-group
-    = required_label f, :company_name, class: "control-label" 
+    = required_label f, :company_name, class: "control-label"
     = text_input f, :company_name, class: "form-control", required: ""
     = error_tag f, :company_name
 
@@ -18,7 +18,7 @@
       = required_label f, login_field, class: "control-label"
       = text_input f, login_field, class: "form-control", required: ""
       = error_tag f, login_field
-  
+
   .form-group
     = required_label f, :email, class: "control-label"
     = text_input f, :email, class: "form-control", required: ""
@@ -35,6 +35,5 @@
     = error_tag f, :password_confirmation
 
   .form-group
-    = submit @label, class: "btn btn-raised btn-primary btn-sm"
-    = link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn btn-sm btn-raised"
-
+    = submit @label, class: "btn btn-primary btn-sm"
+    = link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn btn-sm"

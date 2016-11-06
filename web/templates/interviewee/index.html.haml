@@ -13,7 +13,7 @@
         = form_tag(interviewee_path(@conn, :invite))
           .form-group
             = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control"
-            = tag :input, type: :submit, value: "Invite", class: "btn btn-raised btn-sm"
+            = tag :input, type: :submit, value: "Invite", class: "btn btn-sm"
 
 %table.table
   %thead
@@ -29,5 +29,5 @@
         %td.text-right
           - link to: "#", class: "btn btn-default btn-xs" do
             %span.glyphicon.glyphicon-edit
-          - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" do
+          - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do
             %span.glyphicon.glyphicon-trash

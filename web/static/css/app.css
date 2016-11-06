@@ -1,5 +1,13 @@
 /* This file is for your main application css. */
 
+.header-menu {
+  line-height: 60px;
+}
+
+.header-container {
+  width: 100%;
+}
+
 ul.nav a {
   color: white;
 }
@@ -18,8 +26,10 @@ ul.nav a {
   margin-top: 0px;
   width: 100%;
 }
-
-.btn-group-vertical .btn {
+.list-group-item:first-child {
+  border-top: 0px;
+}
+.list-group-item {
   border-radius: 0px !important;
 }
 

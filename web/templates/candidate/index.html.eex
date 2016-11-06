@@ -30,7 +30,7 @@
           <span class="glyphicon glyphicon-edit"></span>
         <% end %>
 
-        <%= link to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-raised btn-danger btn-xs" do %>
+        <%= link to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
           <span class="glyphicon glyphicon-trash"></span>
         <% end %>
       </td>
@@ -39,4 +39,4 @@
   </tbody>
 </table>
 
-<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-raised btn-default" %>
+<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-default" %>

@@ -1,20 +1,19 @@
-.btn-group-vertical{:role => "group"}
-  - link to: "/", class: "btn btn-raised btn-sidebar" do
-    %span.glyphicon.glyphicon-home 
+.list-group{:role => "group"}
+  - link to: "/", class: "btn btn-sidebar list-group-item" do
+    %span.glyphicon.glyphicon-home
     Dashboard
-  - link to: candidate_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
-    %span.glyphicon.glyphicon-folder-close 
+  - link to: candidate_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
+    %span.glyphicon.glyphicon-folder-close
      Candidates
-  - link to: interviewee_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+  - link to: interviewee_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
     %span.glyphicon.glyphicon-user
     Interviewees
-  - link to: job_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+  - link to: job_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
     %span.glyphicon.glyphicon-list-alt
     Job Board
-  - link to: stage_path(@conn, :index), class: "btn btn-raised btn-sidebar" do
+  - link to: stage_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
     %span.glyphicon.glyphicon-cog
     Interview Stages
-  - link to:  page_path(@conn, :calendar), class: "btn btn-raised btn-sidebar" do 
+  - link to:  page_path(@conn, :calendar), class: "btn btn-sidebar list-group-item" do 
     %span.glyphicon.glyphicon-calendar
     Calendar
-

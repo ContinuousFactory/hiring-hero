@@ -37,4 +37,4 @@
 
 </ul>
 
-<%= link "Edit", to: candidate_path(@conn, :edit, @candidate), class: "btn btn-raised btn-default" %>
+<%= link "Edit", to: candidate_path(@conn, :edit, @candidate), class: "btn btn-default" %>
