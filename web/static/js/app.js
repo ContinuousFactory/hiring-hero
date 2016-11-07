@@ -12,11 +12,9 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
-import "bootstrap-material-design"
 import "bootstrap-fileinput"
 import "trix"
 import "fullcalendar"
-
 
 // Import local files
 //
@@ -29,8 +27,6 @@ $(document).ready(function() {
   $('#calendar').fullCalendar({
     weekends: false
   });
-
-  $.material.init();
 
   $('#candidate_document, #user_avatar, #user_my_organisation_logo').fileinput({
     'showUpload': false

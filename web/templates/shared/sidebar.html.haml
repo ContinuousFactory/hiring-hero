@@ -1,19 +1,38 @@
-.list-group{:role => "group"}
-  - link to: "/", class: "btn btn-sidebar list-group-item" do
-    %span.glyphicon.glyphicon-home
-    Dashboard
-  - link to: candidate_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
-    %span.glyphicon.glyphicon-folder-close
-     Candidates
-  - link to: interviewee_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
-    %span.glyphicon.glyphicon-user
-    Interviewees
-  - link to: job_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
-    %span.glyphicon.glyphicon-list-alt
-    Job Board
-  - link to: stage_path(@conn, :index), class: "btn btn-sidebar list-group-item" do
-    %span.glyphicon.glyphicon-cog
-    Interview Stages
-  - link to:  page_path(@conn, :calendar), class: "btn btn-sidebar list-group-item" do 
-    %span.glyphicon.glyphicon-calendar
-    Calendar
+.navbar-default.sidebar{:role => "navigation"}
+  .sidebar-nav.navbar-collapse
+    %ul#side-menu.nav
+      %li.sidebar-search
+        .input-group.custom-search-form
+          %input.form-control{placeholder: 'Search...' type: 'text'}
+          %span.input-group-btn
+            %button.btn.btn-default{:type => "button"}
+              %i.fa.fa-search
+      %li
+        %a{:href => "/"}
+          %i.fa.fa-dashboard.fa-fw
+          Dashboard
+
+      %li
+        - link to: candidate_path(@conn, :index) do
+          %i.glyphicon.glyphicon-folder-close
+           Candidates
+
+      %li
+        - link to: interviewee_path(@conn, :index) do
+          %i.glyphicon.glyphicon-user
+           Interviewees
+
+      %li
+        - link to: job_path(@conn, :index) do
+          %i.glyphicon.glyphicon-list-alt
+           Job Board
+
+      %li
+        - link to: stage_path(@conn, :index) do
+          %i.glyphicon.glyphicon-cog
+           Interview Stages
+
+      %li
+        - link to: page_path(@conn, :calendar) do
+          %i.glyphicon.glyphicon-calendar
+           Calendar

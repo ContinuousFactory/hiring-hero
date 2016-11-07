@@ -10,15 +10,13 @@
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
 
   %body
-    .container-full
+    #wrapper
       %p.alert.alert-info{:role => "alert"}= get_flash(@conn, :info)
       %p.alert.alert-danger{:role => "alert"}= get_flash(@conn, :error)
       = render Hiringhero.Shared, "header.html", current_user: @current_user, conn: @conn
-      .row
-        .col-md-2.no-padding-right
-          = render Hiringhero.Shared, "sidebar.html", current_user: @current_user, conn: @conn
-        .col-md-10
-          %main{:role => "main"}
-            = render @view_module, @view_template, assigns
+      #page-wrapper
+        .row
+          .col-md-12
+            %main{:role => "main"}
+              = render @view_module, @view_template, assigns
     %script{:src => "#{static_path(@conn, "/js/app.js")}"}
-
