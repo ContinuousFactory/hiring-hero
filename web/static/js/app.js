@@ -11,6 +11,7 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
+import "bootstrap"
 import "phoenix_html"
 import "bootstrap-fileinput"
 import "trix"
@@ -31,5 +32,5 @@ $(document).ready(function() {
   $('#candidate_document, #user_avatar, #user_my_organisation_logo').fileinput({
     'showUpload': false
   });
-
+  $('.dropdown-toggle').dropdown();
 });
