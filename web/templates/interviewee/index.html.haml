@@ -7,13 +7,10 @@
 %h3 Interviewees
 .row
   .col-md-5
-    .panel.panel-default
-      .panel-heading Invite new interviewee
-      .panel-body
-        = form_tag(interviewee_path(@conn, :invite))
-          .form-group
-            = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control"
-            = tag :input, type: :submit, value: "Invite", class: "btn btn-sm"
+    = form_tag(interviewee_path(@conn, :invite), class: "form-inline")
+      .form-group
+        = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control input-sm"
+        = tag :input, type: :submit, value: "Send invitation", class: "btn btn-sm"
 
 %table.table
   %thead
@@ -27,7 +24,5 @@
         %td= interviewee.name
         %td= interviewee.email
         %td.text-right
-          - link to: "#", class: "btn btn-default btn-xs" do
-            %span.glyphicon.glyphicon-edit
           - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do
             %span.glyphicon.glyphicon-trash

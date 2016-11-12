@@ -11,18 +11,19 @@
   %ul.nav.navbar-top-links.navbar-right
     %li.dropdown
       %a.dropdown-toggle{data-toggle: 'dropdown' href: '#'}
-        %i.fa.fa-user.fa-fw
+        = @current_user.name
         %i.fa.fa-caret-down
       %ul.dropdown-menu.dropdown-user
         %li
           %a{:href => "#{user_path(@conn, :show, @current_user)}"}
-            %i.fa.fa-user.fa-fw
-            User Profile
+            Profile
         %li
           %a{:href => "#{user_path(@conn, :show, @current_user)}"}
-            %i.fa.fa-gear.fa-fw
-            Settings
-    %li
-      = Hiringhero.Coherence.ViewHelpers.signout_link(@conn)
+            Company settings
+        %li.divider
+        %li
+          = form_tag("/sessions")
+            = tag(:input, type: "hidden", value: "delete", name: "_method")
+            = content_tag(:button, "Sign out", class: "btn btn-link", type: "submit")
 
   = render Hiringhero.Shared, "sidebar.html", current_user: @current_user, conn: @conn
