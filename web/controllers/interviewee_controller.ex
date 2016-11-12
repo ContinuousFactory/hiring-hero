@@ -13,10 +13,8 @@ defmodule Hiringhero.IntervieweeController do
       interviewees = conn.assigns.current_organisation.members
     else
       current_user = conn.assigns.current_user
-      current_user = Repo.preload(current_user, [:organisation])
-      organisation = current_user.organisation
-      organisation = Repo.preload(organisation, [:members])
-      interviewees = organisation.members
+      current_user = Repo.preload(current_user, [organisation: :members])
+      interviewees = current_user.organisation.members
     end
     render conn, "index.html", interviewees: interviewees, current_organisation: conn.assigns.current_organisation
   end

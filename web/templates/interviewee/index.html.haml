@@ -20,11 +20,13 @@
       %th Name
       %th Email
       %th
+      %th
   %tbody
     - for interviewee <- @interviewees do
       %tr
         %td= interviewee.name
         %td= interviewee.email
+        %td= is_owner(interviewee, @current_organisation)
         %td.text-right
           - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do
             %span.glyphicon.glyphicon-trash
