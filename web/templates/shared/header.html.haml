@@ -22,8 +22,9 @@
             Company settings
         %li.divider
         %li
-          = form_tag("/sessions")
+          = form_tag("/sessions") do
             = tag(:input, type: "hidden", value: "delete", name: "_method")
             = content_tag(:button, "Sign out", class: "btn btn-link", type: "submit")
+          - end
 
   = render Hiringhero.Shared, "sidebar.html", current_user: @current_user, conn: @conn

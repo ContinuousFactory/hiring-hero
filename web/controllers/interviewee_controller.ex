@@ -21,7 +21,7 @@ defmodule Hiringhero.IntervieweeController do
     render conn, "index.html", interviewees: interviewees, current_organisation: conn.assigns.current_organisation
   end
 
-  def invite(conn, %{ "email" => email }) do
+  def invite(conn, %{ "email" => email, "name" => name }) do
     resource = Repo.get_by(User, email: email)
 
     if resource do
@@ -42,7 +42,7 @@ defmodule Hiringhero.IntervieweeController do
     else
       conn
       |> create(%{"invitation" =>  %{ "email" => email,
-                                      "name" => "NA",
+                                      "name" => name,
                                       "organisation_id" => conn.assigns.current_organisation.id }})
     end
   end

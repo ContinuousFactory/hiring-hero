@@ -6,11 +6,13 @@
 
 %h3 Interviewees
 .row
-  .col-md-5
+  .col-md-8
     = form_tag(interviewee_path(@conn, :invite), class: "form-inline")
       .form-group
-        = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control input-sm"
-        = tag :input, type: :submit, value: "Send invitation", class: "btn btn-sm"
+        = tag :input, type: :text, name: "name", placeholder: "Name", class: "form-control input-sm", required: true
+      .form-group
+        = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control input-sm", required: true
+      = tag :input, type: :submit, value: "Send invitation", class: "btn btn-sm"
 
 %table.table
   %thead

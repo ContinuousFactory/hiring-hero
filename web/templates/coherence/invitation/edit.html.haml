@@ -1,7 +1,6 @@
 .row
   .col-md-offset-4.col-md-4
     %h3 Hiring hero
-
     - form_for @changeset, invitation_path(@conn, :create_user), fn f  ->
       - if @changeset.action do
         .alert.alert-danger
