@@ -39,4 +39,4 @@
   </tbody>
 </table>
 
-<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-default" %>
+<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-default btn-sm" %>

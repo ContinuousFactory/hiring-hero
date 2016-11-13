@@ -13,16 +13,14 @@
       %th Title
       %th Description
       %th
-
   %tbody
     - for job <- @jobs do
       %tr
         %td= job.title
         %td= raw job.description
-
         %td.text-right
           = link "Show", to: job_path(@conn, :show, job), class: "btn btn-default btn-xs"
           = link "Edit", to: job_path(@conn, :edit, job), class: "btn btn-default btn-xs"
           = link "Delete", to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
-= link "New job", to: job_path(@conn, :new), class: "btn"
+= link "New job", to: job_path(@conn, :new), class: "btn btn-sm btn-default"
