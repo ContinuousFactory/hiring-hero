@@ -19,14 +19,20 @@
     %tr
       %th Name
       %th Email
-      %th
+      %th Role
       %th
   %tbody
+    %tr
+      %td= @current_organisation.owner.name
+      %td= @current_organisation.owner.email
+      %td owner
+      %td
     - for interviewee <- @interviewees do
       %tr
         %td= interviewee.name
         %td= interviewee.email
-        %td= is_owner(interviewee, @current_organisation)
+        %td
         %td.text-right
-          - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do
-            %span.glyphicon.glyphicon-trash
+          - if is_owner(@conn.assigns.current_user, @current_organisation) do
+            - link to: "#", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do
+              %span.glyphicon.glyphicon-trash

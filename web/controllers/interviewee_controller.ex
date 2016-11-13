@@ -6,17 +6,21 @@ defmodule Hiringhero.IntervieweeController do
 
   import Coherence.InvitationController, only: [create: 2]
 
-  plug :load_core_info when action in [:index, :invite]
+  # plug :load_core_info when action in [:index, :invite]
 
   def index(conn, _params) do
-    if conn.assigns.current_organisation do
-      interviewees = conn.assigns.current_organisation.members
+    current_organisation = conn.assigns.current_organisation
+
+    if current_organisation do
+      current_organisation = Repo.preload(current_organisation, [:owner, :members])
+      interviewees = current_organisation.members
     else
       current_user = conn.assigns.current_user
       current_user = Repo.preload(current_user, [organisation: :members])
       interviewees = current_user.organisation.members
     end
-    render conn, "index.html", interviewees: interviewees, current_organisation: conn.assigns.current_organisation
+
+    render conn, "index.html", interviewees: interviewees, current_organisation: current_organisation
   end
 
   def invite(conn, %{ "email" => email, "name" => name }) do
