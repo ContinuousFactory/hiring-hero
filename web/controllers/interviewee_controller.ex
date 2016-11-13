@@ -22,6 +22,15 @@ defmodule Hiringhero.IntervieweeController do
   def invite(conn, %{ "email" => email, "name" => name }) do
     resource = Repo.get_by(User, email: email)
 
+    # Check if already invite
+    invite = Repo.get_by(Coherence.Invitation, email: email)
+
+    if !is_nil(invite) do
+      conn
+      |> put_flash(:error, "Already invited.")
+      |> redirect(to: interviewee_path(conn, :index))
+    end
+
     if resource do
       changeset = User.changeset(resource, %{
         organisation_id: conn.assigns.current_organisation.id
