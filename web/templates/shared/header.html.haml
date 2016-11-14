@@ -13,6 +13,8 @@
       %a.dropdown-toggle{data-toggle: 'dropdown' href: '#'}
         = @current_user.name
         %i.fa.fa-caret-down
+        - avatar_url = Enum.join(["http://localhost:4000/", Hiringhero.Avatar.url({@current_user.avatar, @current_user})], "")
+        = tag(:img, class: "navbar-avatar", src: avatar_url)
       %ul.dropdown-menu.dropdown-user
         %li
           %a{:href => "#{user_path(@conn, :show, @current_user)}"}

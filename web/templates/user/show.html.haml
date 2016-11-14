@@ -21,10 +21,4 @@
     %b Account active since:
     = @user.inserted_at
 
-.panel.panel-default
-  .panel-heading Organisation
-  .panel-body
-    %b Name:
-    = organisation_name(@user.my_organisation)
-
-= link "Update profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default"
+= link "Update profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-sm"

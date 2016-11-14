@@ -8,7 +8,7 @@ defmodule Hiringhero.User do
   schema "users" do
     field :name, :string
     field :email, :string
-    field :avatar, Hiringhero.Document.Type
+    field :avatar, Hiringhero.Avatar.Type
     belongs_to :organisation, Organisation
     has_one :my_organisation, Organisation, foreign_key: :owner_id
 

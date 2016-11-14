@@ -11,6 +11,10 @@
         <div class="panel-heading">Basic info</div>
         <div class="panel-body">
           <div class="form-group">
+            <%= tag(:img,
+              width: "40%",
+              src: Enum.join(["http://localhost:4000/", Hiringhero.Avatar.url({@user.avatar, @user})], "")) %>
+
             <%= label f, :avatar, class: "control-label" %>
             <%= file_input f, :avatar, class: "form-control" %>
             <%= error_tag f, :avatar %>
