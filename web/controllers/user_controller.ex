@@ -4,6 +4,8 @@ defmodule Hiringhero.UserController do
 
   alias Hiringhero.User
 
+  plug :load_and_authorize_resource, model: Hiringhero.User
+
   def index(conn, _params) do
     users = Repo.all(User)
     render conn, "index.html", users: users

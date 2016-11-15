@@ -42,7 +42,8 @@ defmodule Hiringhero.Mixfile do
      {:arc_ecto, "~> 0.4.3"},
      {:bamboo, "~> 0.7"},
      {:credo, "~> 0.4", only: [:dev, :test]},
-     {:phoenix_haml, "~> 0.2.1"}]
+     {:phoenix_haml, "~> 0.2.1"},
+     {:canary, "~> 1.0.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

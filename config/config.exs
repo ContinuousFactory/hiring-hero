@@ -41,3 +41,7 @@ config :coherence, Hiringhero.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: System.get_env("SENDGRID_API_KEY")
 # %% End Coherence Configuration %%
+
+config :canary, unauthorized_handler: {Hiringhero.Authorization, :handle_unauthorized}
+config :canary, not_found_handler: {Hiringhero.Authorization, :handle_not_found}
+config :canary, repo: Hiringhero.Repo
