@@ -17,7 +17,7 @@
         = tag(:img, class: "navbar-avatar", src: avatar_url)
       %ul.dropdown-menu.dropdown-user
         %li
-          %a{:href => "#{user_path(@conn, :show, @current_user)}"}
+          %a{:href => "#{user_path(@conn, :edit, @current_user)}"}
             Settings
         %li.divider
         %li

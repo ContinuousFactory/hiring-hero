@@ -6,17 +6,6 @@ defmodule Hiringhero.UserController do
 
   plug :load_and_authorize_resource, model: Hiringhero.User
 
-  def index(conn, _params) do
-    users = Repo.all(User)
-    render conn, "index.html", users: users
-  end
-
-  def show(conn, %{"id" => id}) do
-    user = Repo.get(User, id)
-    user = Repo.preload(user, :my_organisation)
-    render conn, "show.html", user: user
-  end
-
   def edit(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
     user = Repo.preload(user, [:my_organisation])

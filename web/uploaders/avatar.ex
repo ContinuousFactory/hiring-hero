@@ -15,7 +15,9 @@ defmodule Hiringhero.Avatar do
     {:convert, "-strip -thumbnail 250x250^ -gravity center -extent 250x250 -format png"}
   end
 
-  def filename(version,  {file, scope}), do: "#{version}-#{file.file_name}"
+  def filename(version,  {file, scope}) do
+    "#{version}-#{file.file_name}"
+  end
 
   def storage_dir(version, {file, scope}) do
     "uploads/avatars/#{scope.id}"

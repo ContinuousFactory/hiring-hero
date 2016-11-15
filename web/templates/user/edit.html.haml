@@ -5,5 +5,5 @@
   %li= link "Users", to: user_path(@conn, :index)
   %li.active= @user.name
 
-%h3 Edit profile
+%h3 Settings
 = render "form.html", changeset: @changeset, action: user_path(@conn, :update, @user), user: @user

@@ -5,25 +5,24 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div>
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">User Profile</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Company</a></li>
-      </ul>
-
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
+  <div class="panel panel-default">
+    <div class="panel-heading"><b>User Profile</b></div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
           <div class="form-group">
+            <%= label f, "Profile picture" %> <br/>
             <%= tag(:img,
               width: "40%",
+              class: "img-circle img-thumbnail",
               src: Enum.join(["http://localhost:4000/", Hiringhero.Avatar.url({@user.avatar, @user})], "")) %>
 
-            <%= label f, :avatar, class: "control-label" %>
             <%= file_input f, :avatar, class: "form-control" %>
             <%= error_tag f, :avatar %>
           </div>
+        </div>
 
+        <div class="col-md-8">
           <div class="form-group">
             <%= label f, :name, class: "control-label" %>
             <%= text_input f, :name, class: "form-control" %>
@@ -47,31 +46,47 @@
             <%= text_input f, :password_confirmation, class: "form-control" %>
             <%= error_tag f, :password_confirmation %>
           </div>
+
+          <div class="form-group">
+            <%= submit "Update profile", class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><b>Company Info</b></div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <%= inputs_for f, :my_organisation, fn fo -> %>
+            <div class="form-group">
+              <%= label f, "Company Logo" %> <br/>
+              <%= tag(:img,
+                width: "40%",
+                class: "img-circle img-thumbnail",
+                src: Enum.join(["http://localhost:4000/", Hiringhero.Logo.url({@user.my_organisation.logo, @user.my_organisation})], "")) %>
+
+              <%= file_input fo, :logo, class: "form-control" %>
+              <%= error_tag fo, :logo %>
+            </div>
+          <% end %>
         </div>
 
-        <div role="tabpanel" class="tab-pane" id="profile">
+        <div class="col-md-8">
           <%= inputs_for f, :my_organisation, fn fo -> %>
             <div class="form-group">
               <%= label fo, :name, class: "control-label" %>
               <%= text_input fo, :name, class: "form-control" %>
               <%= error_tag fo, :name %>
             </div>
-
-            <div class="form-group">
-              <%= tag(:img,
-                width: "40%",
-                src: Enum.join(["http://localhost:4000/", Hiringhero.Logo.url({@user.my_organisation.logo, @user.my_organisation})], "")) %>
-
-              <%= label fo, :logo, class: "control-label" %>
-              <%= file_input fo, :logo, class: "form-control" %>
-              <%= error_tag fo, :logo %>
-            </div>
           <% end %>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <%= submit "Submit", class: "btn btn-default" %>
+          <div class="form-group">
+            <%= submit "Update profile", class: "btn btn-success" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
