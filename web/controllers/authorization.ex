@@ -1,9 +1,9 @@
 defmodule Hiringhero.Authorization do
   use Hiringhero.Web, :controller
-  
+
   def handle_unauthorized(conn) do
     conn
-    |> put_flash(:error, "You can't access that page!")
+    |> put_flash(:error, "Unauthorized access!")
     |> redirect(to: "/")
     |> halt
   end

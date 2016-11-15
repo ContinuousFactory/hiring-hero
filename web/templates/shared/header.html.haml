@@ -18,10 +18,7 @@
       %ul.dropdown-menu.dropdown-user
         %li
           %a{:href => "#{user_path(@conn, :show, @current_user)}"}
-            Profile
-        %li
-          %a{:href => "#{user_path(@conn, :show, @current_user)}"}
-            Company settings
+            Settings
         %li.divider
         %li
           = form_tag("/sessions") do

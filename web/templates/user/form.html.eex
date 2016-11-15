@@ -6,10 +6,14 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Basic info</div>
-        <div class="panel-body">
+    <div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">User Profile</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Company</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
           <div class="form-group">
             <%= tag(:img,
               width: "40%",
@@ -44,13 +48,8 @@
             <%= error_tag f, :password_confirmation %>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Organisation</div>
-        <div class="panel-body">
+        <div role="tabpanel" class="tab-pane" id="profile">
           <%= inputs_for f, :my_organisation, fn fo -> %>
             <div class="form-group">
               <%= label fo, :name, class: "control-label" %>
@@ -67,7 +66,6 @@
               <%= file_input fo, :logo, class: "form-control" %>
               <%= error_tag fo, :logo %>
             </div>
-
           <% end %>
         </div>
       </div>

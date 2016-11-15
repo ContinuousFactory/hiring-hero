@@ -2,23 +2,31 @@
 %ol.breadcrumb
   %li
     %a{:href => "/"} Home
-  %li= link "Users", to: user_path(@conn, :index)
+  %li= link "Users", to: "#"
   %li.active= @user.name
 
-%h3 My profile
-.panel.panel-default
-  .panel-heading Basic info
-  .panel-body
-    %b Name:
-    = @user.name
-    %br
-    %b Email:
-    = @user.email
-    %br
-    %b Last loggged in:
-    = @user.last_sign_in_at
-    %br
-    %b Account active since:
-    = @user.inserted_at
+%h3 Settings
 
-= link "Update profile", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-sm"
+%div
+  %ul.nav.nav-tabs(role="tablist")
+    %li.active(role="presentation")
+      %a(aria-controls="home" data-toggle="tab" href="#home" role="tab") User Profile
+    %li(role="presentation")
+      %a(aria-controls="profile" data-toggle="tab" href="#profile" role="tab") Company
+  .tab-content
+    #home.tab-pane.active(:role => "tabpanel")
+      %b Name:
+      = @user.name
+      %br
+      %b Email:
+      = @user.email
+      %br
+      %b Last loggged in:
+      = @user.last_sign_in_at
+      %br
+      %b Account active since:
+      = @user.inserted_at
+    #profile.tab-pane(:role => "tabpanel") ...
+
+%br
+= link "Change settings", to: user_path(@conn, :edit, @user.id), class: "btn btn-default btn-sm"
