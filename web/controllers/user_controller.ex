@@ -22,7 +22,7 @@ defmodule Hiringhero.UserController do
       {:ok, user} ->
         conn
         |> put_flash(:info, "User updated successfully.")
-        |> redirect(to: user_path(conn, :show, user))
+        |> redirect(to: user_path(conn, :edit, user))
       {:error, changeset} ->
         render(conn, "edit.html", user: user, changeset: changeset)
     end
