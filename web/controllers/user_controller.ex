@@ -27,4 +27,14 @@ defmodule Hiringhero.UserController do
         render(conn, "edit.html", user: user, changeset: changeset)
     end
   end
+
+  def delete(conn, %{"id" => id}) do
+    user = Repo.get!(User, id)
+
+    Repo.delete!(user)
+
+    conn
+    |> put_flash(:info, "Member deleted successfully.")
+    |> redirect(to: interviewee_path(conn, :index))
+  end
 end
