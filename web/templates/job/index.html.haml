@@ -16,11 +16,9 @@
   %tbody
     - for job <- @jobs do
       %tr
-        %td= job.title
+        %td= link job.title, to: job_path(@conn, :show, job)
         %td= raw job.description
-        %td.text-right
-          = link "Show", to: job_path(@conn, :show, job), class: "btn btn-default btn-xs"
-          = link "Edit", to: job_path(@conn, :edit, job), class: "btn btn-default btn-xs"
+        %td.text-right(style="white-space: nowrap;")
           = link "Delete", to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
 = link "New job", to: job_path(@conn, :new), class: "btn btn-sm btn-default"

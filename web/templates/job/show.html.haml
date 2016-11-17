@@ -7,14 +7,8 @@
   %li.active
     = @job.title
 
-%h3 Show job
-  %ul
-    %li
-      %strong Title:
-        = @job.title
-    %li
-      %strong Description:
-        = @job.description
+%h3= @job.title
+%strong Description:
+= raw @job.description
 
-= link "Edit", to: job_path(@conn, :edit, @job)
-= link "Back", to: job_path(@conn, :index)
+= link "Edit", to: job_path(@conn, :edit, @job), class: "btn btn-sm btn-default"

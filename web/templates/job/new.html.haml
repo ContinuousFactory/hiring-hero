@@ -10,5 +10,3 @@
 %h3 New job
 
 = render "form.html", changeset: @changeset, action: job_path(@conn, :create)
-
-= link "Back", to: job_path(@conn, :index)
