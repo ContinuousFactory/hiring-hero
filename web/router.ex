@@ -8,8 +8,6 @@ defmodule Hiringhero.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Coherence.Authentication.Session
-    plug Hiringhero.Subdomain
   end
 
   pipeline :protected do
@@ -34,6 +32,10 @@ defmodule Hiringhero.Router do
   scope "/" do
     pipe_through :protected
     coherence_routes :protected
+  end
+
+  scope "/", ComSubdomain do
+    pipe_through :browser
   end
 
   scope "/", Hiringhero do

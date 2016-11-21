@@ -41,5 +41,5 @@ defmodule Hiringhero.Endpoint do
     key: "_hiringhero_key",
     signing_salt: "/WAUVCk1"
 
-  plug Hiringhero.Router
+  plug Hiringhero.Plug.ComSubdomain, Hiringhero.Router
 end

@@ -23,6 +23,13 @@ import "fullcalendar"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+import Post from './components/Post';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+if (document.querySelector('.dashboard-react')) {
+  ReactDOM.render(<Post />, document.querySelector('.dashboard-react'));
+}
 
 $(document).ready(function() {
   $('#calendar').fullCalendar({
