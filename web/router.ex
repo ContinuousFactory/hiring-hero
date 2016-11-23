@@ -34,8 +34,10 @@ defmodule Hiringhero.Router do
     coherence_routes :protected
   end
 
-  scope "/", ComSubdomain do
+  scope "/", Hiringhero do
     pipe_through :browser
+
+    get "/test", TestController, :index
   end
 
   scope "/", Hiringhero do
