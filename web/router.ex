@@ -40,7 +40,7 @@ defmodule Hiringhero.Router do
     get "/test", TestController, :index
   end
 
-  scope "/", Hiringhero do
+  scope "/app/", Hiringhero do
     pipe_through :protected
 
     resources "/users", UserController

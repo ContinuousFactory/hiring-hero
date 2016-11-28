@@ -1,6 +1,6 @@
 <br />
 <ol class="breadcrumb">
-  <li><a href="/">Home</a></li>
+  <li><a href="/app">Home</a></li>
   <li><%= link "Candidates", to: candidate_path(@conn, :index) %></li>
   <li class="active"><%= @candidate.email %></li>
 </ol>
