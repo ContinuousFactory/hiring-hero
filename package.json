@@ -6,6 +6,7 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
+    "antd": "^2.5.0",
     "bootstrap-fileinput": "4.3.4",
     "fullcalendar": "3.0.0",
     "phoenix": "file:deps/phoenix",

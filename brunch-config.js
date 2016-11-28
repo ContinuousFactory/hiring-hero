@@ -75,7 +75,8 @@ exports.config = {
     styles: {
       fullcalendar: ['dist/fullcalendar.css'],
       trix: ['dist/trix.css'],
-      'bootstrap-fileinput': ['css/fileinput.css']
+      'bootstrap-fileinput': ['css/fileinput.css'],
+      antd: ['dist/antd.css']
     }
   }
 };
