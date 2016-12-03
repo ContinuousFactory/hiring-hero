@@ -37,7 +37,9 @@ defmodule Hiringhero.Router do
   scope "/", Hiringhero do
     pipe_through :browser
 
-    get "/test", TestController, :index
+    get "/", PageController, :dashboard
+
+    get "/companies/:subdomain", CompanyController, :index
   end
 
   scope "/app/", Hiringhero do
