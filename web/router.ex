@@ -24,6 +24,11 @@ defmodule Hiringhero.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api" do
+    pipe_through :api
+    get "/companies/:subdomain", Api.CompanyController, :index
+  end
+
   scope "/" do
     pipe_through :browser
     coherence_routes

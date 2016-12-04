@@ -10,6 +10,5 @@
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
 
   %body
-    .public_container
     = render @view_module, @view_template, assigns
     %script{:src => "#{static_path(@conn, "/js/public.js")}"}

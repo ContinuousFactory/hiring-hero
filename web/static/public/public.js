@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ReduxPromise from 'redux-promise';
+import { applyMiddleware, bindActionCreators, createStore } from 'redux';
+import { Provider } from 'react-redux'
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hehe</h1>
-    </div>
-  );
-};
+import rootReducer from './reducers';
+import EnhancedPublicApp from './components/PublicApp';
 
-ReactDOM.render(<App />, document.querySelector('.public_container'));
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(rootReducer)}>
+    <EnhancedPublicApp />
+  </Provider>,
+  document.querySelector('.company_container')
+);
