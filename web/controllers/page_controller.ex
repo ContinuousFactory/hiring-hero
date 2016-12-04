@@ -9,4 +9,10 @@ defmodule Hiringhero.PageController do
   def dashboard(conn, _params) do
     render conn, "dashboard.html"
   end
+
+  def landing(conn, _) do
+    conn
+    |> put_layout("landing.html")
+    |> render("landing.html")
+  end
 end

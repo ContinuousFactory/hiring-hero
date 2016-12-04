@@ -42,7 +42,7 @@ defmodule Hiringhero.Router do
   scope "/", Hiringhero do
     pipe_through :browser
 
-    get "/", PageController, :dashboard
+    get "/", PageController, :landing
 
     get "/companies/:subdomain", CompanyController, :index
   end
