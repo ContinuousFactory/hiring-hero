@@ -2,16 +2,25 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ReduxPromise from 'redux-promise';
 import { applyMiddleware, bindActionCreators, createStore } from 'redux';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import rootReducer from './reducers';
 import EnhancedPublicApp from './components/PublicApp';
+import JobDetail from './components/JobDetail';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const store = createStoreWithMiddleware(rootReducer);
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(rootReducer)}>
-    <EnhancedPublicApp />
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/companies/:subdomain" component={EnhancedPublicApp}>
+        <Route path="/jobs/:id" component={JobDetail} />
+      </Route>
+    </Router>
   </Provider>,
   document.querySelector('.company_container')
 );

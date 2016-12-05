@@ -15,6 +15,7 @@ defmodule Api.CompanyView do
 
   def job_json(job) do
     %{
+      id: job.id,
       title: job.title,
       description: job.description
     }

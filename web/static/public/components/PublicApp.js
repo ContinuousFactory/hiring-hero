@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { Row, Col, Spin } from 'antd';
 
 import fetchCompany from '../actions';
+import Header from './Header';
+import JobListing from './JobListing';
 
 class PublicApp extends Component {
   componentDidMount() {
-    const subdomain = window.location.pathname.split("/")[2];
-    this.props.fetchCompany(subdomain);
+    this.props.fetchCompany(this.props.params.subdomain);
   }
 
   render() {
@@ -22,21 +23,8 @@ class PublicApp extends Component {
 
     return (
       <div>
-        <Row>
-          <Col span={3}></Col>
-          <Col span={18}>
-            <Row>
-              <Col span={18}>
-                <h1>{company.name}</h1>
-              </Col>
-              <Col span={6}>
-                <br />
-                <p><img src={company.logo} alt="" width="80%"/></p>
-              </Col>
-            </Row>
-          </Col>
-          <Col span={3}></Col>
-        </Row>
+        <Header company={company} />
+        <JobListing jobs={company.jobs} />
       </div>
     );
   }

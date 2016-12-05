@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
 const companiesReducer = (state = [], action) => {
   switch (action.type) {
@@ -10,7 +11,8 @@ const companiesReducer = (state = [], action) => {
 }
 
 const rootReducer = combineReducers({
-  companies: companiesReducer
+  companies: companiesReducer,
+  routing: routerReducer
 });
 
 export default rootReducer;
