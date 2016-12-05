@@ -45,6 +45,7 @@ defmodule Hiringhero.Router do
     get "/", PageController, :landing
 
     get "/companies/:subdomain", CompanyController, :index
+    get "/companies/:subdomain/jobs/:id", CompanyController, :index
   end
 
   scope "/app/", Hiringhero do

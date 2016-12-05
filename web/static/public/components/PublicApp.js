@@ -24,7 +24,7 @@ class PublicApp extends Component {
     return (
       <div>
         <Header company={company} />
-        <JobListing jobs={company.jobs} />
+        <JobListing jobs={company.jobs} subdomain={this.props.params.subdomain} company={company}/>
       </div>
     );
   }
