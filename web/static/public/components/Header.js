@@ -8,7 +8,7 @@ const Header = ({company}) => {
       <Col span={3}></Col>
       <Col span={18}>
         <Row>
-          <Col span={18}>
+          <Col span={20}>
             <h1>{company.name}</h1>
             <h5>{company.tagline}</h5>
             <Link to={company.website} target="_blank">{company.website}</Link>
@@ -30,9 +30,9 @@ const Header = ({company}) => {
               </Link>
             </p>
           </Col>
-          <Col span={6}>
+          <Col span={4}>
             <br />
-            <p><img src={company.logo} alt="" width="70%"/></p>
+            <p><img src={company.logo} alt="" width="100%"/></p>
           </Col>
         </Row>
       </Col>

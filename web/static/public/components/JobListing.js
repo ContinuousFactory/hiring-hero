@@ -21,6 +21,7 @@ const JobListing = ({jobs, subdomain, company}) => {
     <div>
       <Row>
         <Col span={18} offset={3}>
+          <hr />
           <h3>Current Jobs Opening at {company.name}</h3>
         </Col>
       </Row>

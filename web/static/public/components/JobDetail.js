@@ -30,12 +30,11 @@ class JobDetail extends Component {
         <Row>
           <Col span={3}></Col>
           <Col span={18}>
+            <hr />
             <Row>
               <Col span={24}>
                 <h3>{currentJob.title}</h3>
                 at <strong>{company.name}</strong> <Link to={`/companies/${company.subdomain}`}>(View all jobs)</Link>
-                <br/>
-                <br/>
                 {ReactHtmlParser(currentJob.description)}
               </Col>
             </Row>
