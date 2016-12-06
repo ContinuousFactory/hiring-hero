@@ -8,6 +8,14 @@ defmodule Hiringhero.Organisation do
   schema "organisations" do
     field :name, :string
     field :subdomain, :string
+    field :website, :string
+    field :description, :string
+    field :linkedin, :string
+    field :twitter, :string
+    field :github, :string
+    field :facebook, :string
+    field :tagline, :string
+
     field :logo, Hiringhero.Logo.Type
 
     has_many :members, User
@@ -19,11 +27,13 @@ defmodule Hiringhero.Organisation do
     timestamps
   end
 
+  @fields ~w(name subdomain website description linkedin twitter github facebook tagline)
+
   def changeset(organisation, params \\ %{}) do
     params = set_subdomain(params)
 
     organisation
-    |> cast(params, [:name, :subdomain, :owner_id])
+    |> cast(params, @fields)
     |> cast_attachments(params, [:logo])
     |> validate_required([:name, :subdomain])
   end
