@@ -81,6 +81,48 @@
               <%= text_input fo, :name, class: "form-control" %>
               <%= error_tag fo, :name %>
             </div>
+
+            <div class="form-group">
+              <%= label fo, :website, class: "control-label" %>
+              <%= text_input fo, :website, class: "form-control" %>
+              <%= error_tag fo, :website %>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :tagline, class: "control-label" %>
+              <%= text_input fo, :tagline, class: "form-control" %>
+              <%= error_tag fo, :tagline %>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :description, class: "control-label" %>
+              <%= text_input fo, :description, class: "form-control" %>
+              <%= error_tag fo, :description %>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :linkedin, class: "control-label" %>
+              <%= text_input fo, :linkedin, class: "form-control" %>
+              <%= error_tag fo, :linkedin %>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :twitter, class: "control-label" %>
+              <%= text_input fo, :twitter, class: "form-control" %>
+              <%= error_tag fo, :twitter %>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :github, class: "control-label" %>
+              <%= text_input fo, :github, class: "form-control" %>
+              <%= error_tag fo, :github %>
+            </div>
+
+            <div class="form-group">
+              <%= label fo, :facebook, class: "control-label" %>
+              <%= text_input fo, :facebook, class: "form-control" %>
+              <%= error_tag fo, :facebook %>
+            </div>
           <% end %>
 
           <div class="form-group">

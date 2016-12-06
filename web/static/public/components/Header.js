@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Button, Icon } from 'antd';
+import { Link } from 'react-router';
 
 const Header = ({company}) => {
   return (
@@ -9,6 +10,25 @@ const Header = ({company}) => {
         <Row>
           <Col span={18}>
             <h1>{company.name}</h1>
+            <h5>{company.tagline}</h5>
+            <Link to={company.website} target="_blank">{company.website}</Link>
+            <p>
+              <Link to={company.linkedin} target="_blank">
+                <i className="fa fa-linkedin-square hh-social-button"></i>
+              </Link>
+
+              <Link to={company.facebook} target="_blank">
+                <i className="fa fa-facebook-official hh-social-button"></i>
+              </Link>
+
+              <Link to={company.twitter} target="_blank">
+                <i className="fa fa-twitter hh-social-button"></i>
+              </Link>
+
+              <Link to={company.github} target="_blank">
+                <i className="fa fa-github hh-social-button"></i>
+              </Link>
+            </p>
           </Col>
           <Col span={6}>
             <br />
