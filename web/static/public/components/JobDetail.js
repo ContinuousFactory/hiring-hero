@@ -5,7 +5,9 @@ import ReactHtmlParser from 'react-html-parser';
 import { BackTop } from 'antd';
 
 import Header from './Header';
+import Footer from './Footer';
 import HHSpinner from './HHSpinner';
+import JobForm from './JobForm';
 
 class JobDetail extends Component {
   render() {
@@ -27,11 +29,24 @@ class JobDetail extends Component {
         <Row>
           <Col span={3}></Col>
           <Col span={18}>
-            <h4>{currentJob.title}</h4>
-            {ReactHtmlParser(currentJob.description)}
+            <Row>
+              <Col span={24}>
+                <h4>{currentJob.title}</h4>
+                {ReactHtmlParser(currentJob.description)}
+              </Col>
+            </Row>
+
+            <br />
+            <Row>
+              <Col span={18}>
+                <JobForm />
+              </Col>
+            </Row>
           </Col>
           <Col span={3}></Col>
         </Row>
+
+        <Footer />
         <BackTop />
       </div>
     );
