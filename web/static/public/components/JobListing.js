@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'react-router'
 
-const JobListing = ({jobs, subdomain}) => {
+const JobListing = ({jobs, subdomain, company}) => {
   const jobsListing = jobs.map((job) => {
     return (
       <Row key={job.id}>
@@ -19,6 +19,11 @@ const JobListing = ({jobs, subdomain}) => {
 
   return (
     <div>
+      <Row>
+        <Col span={18} offset={3}>
+          <h3>Current Jobs Opening at {company.name}</h3>
+        </Col>
+      </Row>
       {jobsListing}
     </div>
   )

@@ -9,6 +9,6 @@
     %title Hiring Hero
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
 
-  %body
+  %body(style="background-color: white;")
     = render @view_module, @view_template, assigns
     %script{:src => "#{static_path(@conn, "/js/public.js")}"}

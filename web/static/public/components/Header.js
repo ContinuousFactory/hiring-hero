@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Button, Icon } from 'antd';
 
 const Header = ({company}) => {
   return (

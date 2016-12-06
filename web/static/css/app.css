@@ -24,3 +24,12 @@
   border-radius: 100%;
   margin: 0 0 0 5px;
 }
+
+.public-footer {
+  margin-top: 10px;
+  border-top: 1px solid #ababab;
+  background-color: #d0d0d0;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+}

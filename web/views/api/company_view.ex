@@ -5,6 +5,7 @@ defmodule Api.CompanyView do
     %{
       name: company.name,
       logo: logo_for(company),
+      subdomain: company.subdomain,
       jobs: Enum.map(company.jobs, &job_json/1)
     }
   end

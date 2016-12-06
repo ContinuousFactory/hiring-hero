@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col, Spin } from 'antd';
+import { Row, Col, Spin, Button, Icon } from 'antd';
 import ReactHtmlParser from 'react-html-parser';
 import { BackTop } from 'antd';
+import { Link } from 'react-router';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -31,7 +32,10 @@ class JobDetail extends Component {
           <Col span={18}>
             <Row>
               <Col span={24}>
-                <h4>{currentJob.title}</h4>
+                <h3>{currentJob.title}</h3>
+                at <strong>{company.name}</strong> <Link to={`/companies/${company.subdomain}`}>(View all jobs)</Link>
+                <br/>
+                <br/>
                 {ReactHtmlParser(currentJob.description)}
               </Col>
             </Row>
