@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import { Row, Col, Spin } from 'antd';
+import { connect } from 'react-redux';
 
-import fetchCompany from '../actions';
 import Header from './Header';
 import JobListing from './JobListing';
+import Footer from './Footer';
 
 class PublicApp extends Component {
-  componentDidMount() {
-    this.props.fetchCompany(this.props.params.subdomain);
-  }
-
   render() {
     const company = this.props.companies[0];
 
@@ -25,6 +20,7 @@ class PublicApp extends Component {
       <div>
         <Header company={company} />
         <JobListing jobs={company.jobs} subdomain={this.props.params.subdomain} company={company}/>
+        <Footer />
       </div>
     );
   }
@@ -34,10 +30,6 @@ function mapStateToProps({ companies }){
   return { companies };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCompany }, dispatch);
-}
-
-const EnhancedPublicApp = connect(mapStateToProps, mapDispatchToProps)(PublicApp);
+const EnhancedPublicApp = connect(mapStateToProps, null)(PublicApp);
 
 export default EnhancedPublicApp;

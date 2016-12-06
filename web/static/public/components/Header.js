@@ -12,7 +12,7 @@ const Header = ({company}) => {
           </Col>
           <Col span={6}>
             <br />
-            <p><img src={company.logo} alt="" width="80%"/></p>
+            <p><img src={company.logo} alt="" width="70%"/></p>
           </Col>
         </Row>
       </Col>

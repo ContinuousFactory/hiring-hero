@@ -9,6 +9,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import rootReducer from './reducers';
 import EnhancedPublicApp from './components/PublicApp';
 import EnhancedJobDetail from './components/JobDetail';
+import EnhancedPublicLayout from './components/PublicLayout';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 const store = createStoreWithMiddleware(rootReducer);
@@ -17,8 +18,10 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/companies/:subdomain" component={EnhancedPublicApp} />
-      <Route path="/companies/:subdomain/jobs/:jobId" component={EnhancedJobDetail} />
+      <Router path="/companies" component={EnhancedPublicLayout}>
+        <Route path=":subdomain" component={EnhancedPublicApp} />
+        <Route path=":subdomain/jobs/:jobId" component={EnhancedJobDetail} />
+      </Router>
     </Router>
   </Provider>,
   document.querySelector('.company_container')
