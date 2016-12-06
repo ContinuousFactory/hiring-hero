@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import JobListing from './JobListing';
 import Footer from './Footer';
+import HHSpinner from './HHSpinner';
 
 class PublicApp extends Component {
   render() {
@@ -12,7 +13,7 @@ class PublicApp extends Component {
 
     if (company === null || company === undefined) {
       return (
-        <Spin tip="Loading..." size="large"/>
+        <HHSpinner />
       )
     }
 

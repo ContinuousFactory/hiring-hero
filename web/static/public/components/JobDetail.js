@@ -5,6 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 import { BackTop } from 'antd';
 
 import Header from './Header';
+import HHSpinner from './HHSpinner';
 
 class JobDetail extends Component {
   render() {
@@ -12,7 +13,7 @@ class JobDetail extends Component {
 
     if (company === null || company === undefined) {
       return (
-        <Spin tip="Loading..." size="large"/>
+        <HHSpinner />
       )
     }
 
