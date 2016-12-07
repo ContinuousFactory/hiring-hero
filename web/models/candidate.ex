@@ -27,7 +27,7 @@ defmodule Hiringhero.Candidate do
     |> init_status
     |> cast(params, [:name, :email, :status, :summary, :job_id, :organisation_id])
     |> cast_attachments(params, [:document])
-    |> validate_required([:name, :email, :status, :summary, :job_id, :organisation_id])
+    |> validate_required([:name, :email, :status, :job_id, :organisation_id])
   end
 
   defp init_status(struct) do
@@ -35,9 +35,8 @@ defmodule Hiringhero.Candidate do
   end
 
   def with_org(organisation_id) do
-    from c in Candidate, 
-      where: c.organisation_id == ^organisation_id, 
+    from c in Candidate,
+      where: c.organisation_id == ^organisation_id,
       select: c
   end
 end
-

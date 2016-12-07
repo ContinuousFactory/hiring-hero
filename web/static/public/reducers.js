@@ -10,8 +10,18 @@ const companiesReducer = (state = [], action) => {
   }
 }
 
+const resumesReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'SUBMIT_RESUME':
+      return [action.payload.data, ...state];
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   companies: companiesReducer,
+  resumes: resumesReducer,
   routing: routerReducer
 });
 

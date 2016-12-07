@@ -24,9 +24,10 @@ defmodule Hiringhero.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api" do
+  scope "/api", as: :api do
     pipe_through :api
     get "/companies/:subdomain", Api.CompanyController, :index
+    post "/companies/:company_id/jobs/:job_id/candidates", Api.CandidateController, :create
   end
 
   scope "/" do

@@ -1,24 +1,20 @@
 import React from 'react';
-import { Form, Input, Icon, Select, Row, Col, Upload, Button } from 'antd';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Form, Input, Icon, Select, Row, Col, Upload, Button, message } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
+
+import { submitResume } from '../actions';
 
 const JobForm = Form.create()(React.createClass({
   handleSubmit(e) {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        this.props.submitResume(values, this.props.job.id, this.props.company.id);
       }
     });
-  },
-
-  checkConfirm(rule, value, callback) {
-    const form = this.props.form;
-    if (value && this.state.passwordDirty) {
-      form.validateFields(['confirm'], { force: true });
-    }
-    callback();
   },
 
   normFile(e) {
@@ -28,18 +24,32 @@ const JobForm = Form.create()(React.createClass({
     return e && e.fileList;
   },
 
+  beforeUpload(file){
+    const isPdf = file.type === 'application/pdf';
+    if (!isPdf) {
+      message.error('You can only upload PDF file!');
+    }
+
+    const validSize = file.size < 5242880;
+    if (!validSize) {
+      message.error('You can only upload PDF file less than 5Mb!');
+    }
+
+    return isPdf && validSize;
+  },
+
   render() {
     const { getFieldDecorator } = this.props.form;
 
     const formItemLayout = {
-      labelCol: { span: 6 },
+        labelCol: { span: 4 },
       wrapperCol: { span: 14 },
     };
 
     const tailFormItemLayout = {
       wrapperCol: {
         span: 14,
-        offset: 6,
+        offset: 4,
       },
     };
 
@@ -75,17 +85,6 @@ const JobForm = Form.create()(React.createClass({
 
         <FormItem
           {...formItemLayout}
-          label="Phone Number"
-        >
-          {getFieldDecorator('phone', {
-            rules: [{ required: true, message: 'Please input your phone number!' }],
-          })(
-            <Input />
-          )}
-        </FormItem>
-
-        <FormItem
-          {...formItemLayout}
           label="Resume/CV"
           extra="Accept pdf/doc"
         >
@@ -93,24 +92,13 @@ const JobForm = Form.create()(React.createClass({
             valuePropName: 'fileList',
             normalize: this.normFile,
           })(
-            <Upload name="logo" action="/upload.do" listType="picture" onChange={this.handleUpload}>
-              <Button type="ghost">
-                <Icon type="upload" /> Click to upload
-              </Button>
-            </Upload>
-          )}
-        </FormItem>
-
-        <FormItem
-          {...formItemLayout}
-          label="Cover Letter"
-          extra="Accept pdf/doc"
-        >
-          {getFieldDecorator('coverLetter', {
-            valuePropName: 'fileList',
-            normalize: this.normFile,
-          })(
-            <Upload name="logo" action="/upload.do" listType="picture" onChange={this.handleUpload}>
+            <Upload
+              name="logo"
+              action="/upload.do"
+              listType="picture"
+              onChange={this.handleUpload}
+              beforeUpload={this.beforeUpload}
+              >
               <Button type="ghost">
                 <Icon type="upload" /> Click to upload
               </Button>
@@ -126,4 +114,10 @@ const JobForm = Form.create()(React.createClass({
   },
 }));
 
-export default JobForm;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ submitResume }, dispatch);
+}
+
+const EnhancedJobForm = connect(null, mapDispatchToProps)(JobForm);
+
+export default EnhancedJobForm;

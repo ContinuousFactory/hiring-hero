@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import fetchCompany from '../actions';
+import { fetchCompany } from '../actions';
 
 class PublicLayout extends Component {
   componentDidMount() {

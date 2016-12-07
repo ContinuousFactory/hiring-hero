@@ -3,6 +3,7 @@ defmodule Api.CompanyView do
 
   def render("index.json", %{company: company}) do
     %{
+      id: company.id,
       name: company.name,
       logo: logo_for(company),
       subdomain: company.subdomain,

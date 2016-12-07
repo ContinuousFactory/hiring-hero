@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 import Header from './Header';
 import Footer from './Footer';
 import HHSpinner from './HHSpinner';
-import JobForm from './JobForm';
+import EnhancedJobForm from './JobForm';
 
 class JobDetail extends Component {
   render() {
@@ -42,7 +42,7 @@ class JobDetail extends Component {
             <br />
             <Row>
               <Col span={18}>
-                <JobForm />
+                <EnhancedJobForm job={currentJob} company={company}/>
               </Col>
             </Row>
           </Col>
