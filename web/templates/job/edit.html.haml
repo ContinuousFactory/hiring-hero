@@ -5,7 +5,7 @@
   %li
     = link "Job Board", to: job_path(@conn, :index)
   %li
-    = link @job.title, to: job_path(@conn, :show, @job.id)
+    = @job.title
   %li.active
     Edit
 

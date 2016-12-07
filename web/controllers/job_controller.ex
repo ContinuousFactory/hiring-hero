@@ -26,12 +26,7 @@ defmodule Hiringhero.JobController do
         render(conn, "new.html", changeset: changeset)
     end
   end
-
-  def show(conn, %{"id" => id}) do
-    job = Repo.get!(Job, id)
-    render(conn, "show.html", job: job)
-  end
-
+  
   def edit(conn, %{"id" => id}) do
     job = Repo.get!(Job, id)
     changeset = Job.changeset(job)

@@ -7,17 +7,19 @@
 
 %h3 Job Board
 
-%table.table
+%table.table.table-hover
   %thead
     %tr
       %th Title
       %th Description
+      %th Type
       %th
   %tbody
     - for job <- @jobs do
       %tr
-        %td= link job.title, to: job_path(@conn, :show, job)
+        %td= link job.title, to: job_path(@conn, :edit, job)
         %td= raw job.description
+        %td= job.type
         %td.text-right(style="white-space: nowrap;")
           = link "Delete", to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
 
