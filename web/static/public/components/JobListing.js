@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Tag } from 'antd';
 import { Link } from 'react-router'
 
 const JobListing = ({jobs, subdomain, company}) => {
@@ -7,9 +7,10 @@ const JobListing = ({jobs, subdomain, company}) => {
     return (
       <Row key={job.id}>
         <Col span={3}></Col>
-        <Col span={18}>
+        <Col span={18} className="hh-job-row">
           <h4>
-            <Link to={`/companies/${subdomain}/jobs/${job.id}`}>{job.title}</Link>
+            <Link to={`/companies/${subdomain}/jobs/${job.id}`}>{job.title}</Link>&nbsp;
+            <Tag color="#fd905f"> {job.type} </Tag>
           </h4>
         </Col>
         <Col span={3}></Col>

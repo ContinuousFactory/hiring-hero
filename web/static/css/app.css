@@ -45,4 +45,10 @@
   margin-right: 5px;
 }
 
+.hh-job-row {
+  padding: 0px 10px;
+  border-left: 4px #e5e5e5 solid;
+  margin-bottom: 12px;
+}
+
 /* END Public Job page */

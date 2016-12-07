@@ -9,6 +9,11 @@
     = error_tag f, :title
 
   .form-group
+    = label f, :type, class: "control-label"
+    = text_input f, :type, class: "form-control"
+    = error_tag f, :type
+
+  .form-group
     = label f, :description, class: "control-label"
     = hidden_input f, :description, class: "form-control"
     %trix-editor{:input => "job_description"}

@@ -7,6 +7,7 @@ defmodule Hiringhero.Job do
   schema "jobs" do
     field :title, :string
     field :description, :string
+    field :type, :string
 
     has_many :candidates, Candidate
 
@@ -17,7 +18,7 @@ defmodule Hiringhero.Job do
 
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :description, :organisation_id])
+    |> cast(params, [:title, :description, :type, :organisation_id])
     |> validate_required([:title, :description, :organisation_id])
   end
 

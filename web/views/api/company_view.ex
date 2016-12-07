@@ -25,6 +25,7 @@ defmodule Api.CompanyView do
     %{
       id: job.id,
       title: job.title,
+      type: job.type,
       description: job.description
     }
   end
