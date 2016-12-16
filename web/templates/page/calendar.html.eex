@@ -4,5 +4,4 @@
   <li class="active">Calendar</li>
 </ol>
 
-<div id="calendar">
-</div>
+<h3>Events List</h3>

@@ -80,6 +80,7 @@ exports.config = {
       fullcalendar: ['dist/fullcalendar.css'],
       trix: ['dist/trix.css'],
       'bootstrap-fileinput': ['css/fileinput.css'],
+      'bootstrap-material-design': ['dist/css/bootstrap-material-design.css'],
       antd: ['dist/antd.css']
     }
   }

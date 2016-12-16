@@ -13,6 +13,7 @@
 // to also remove its path from "config.paths.watched".
 import "bootstrap"
 import "phoenix_html"
+import "bootstrap-material-design"
 import "bootstrap-fileinput"
 import "trix"
 import "fullcalendar"
@@ -40,4 +41,5 @@ $(document).ready(function() {
     'showUpload': false
   });
   $('.dropdown-toggle').dropdown();
+  $.material.init();
 });
