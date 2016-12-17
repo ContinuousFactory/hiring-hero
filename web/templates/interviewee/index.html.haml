@@ -34,5 +34,5 @@
         %td
         %td.text-right
           - if is_owner(@conn.assigns.current_user, @current_organisation) do
-            - link to: "#{user_path(@conn, :delete, interviewee)}", method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do
+            - link to: "#{user_path(@conn, :delete, interviewee)}", method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
               %span.glyphicon.glyphicon-trash

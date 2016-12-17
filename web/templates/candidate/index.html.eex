@@ -26,11 +26,7 @@
       <td><%= raw candidate.summary %></td>
 
       <td class="text-right">
-        <%= link to: candidate_path(@conn, :edit, candidate), class: "btn btn-default btn-xs" do %>
-          <span class="glyphicon glyphicon-edit"></span>
-        <% end %>
-
-        <%= link to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+        <%= link to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do %>
           <span class="glyphicon glyphicon-trash"></span>
         <% end %>
       </td>
