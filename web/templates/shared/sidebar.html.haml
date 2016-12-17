@@ -27,6 +27,6 @@
            Interview Stages
 
       %li
-        - link to: page_path(@conn, :calendar) do
+        - link to: company_event_path(@conn, :index, @conn.assigns.current_organisation.id) do
           %i.glyphicon.glyphicon-calendar
            Calendar

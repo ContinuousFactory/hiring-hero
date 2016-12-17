@@ -57,11 +57,14 @@ defmodule Hiringhero.Router do
     resources "/stages", StageController
 
     get "/", PageController, :dashboard
-    get "/calendar", PageController, :calendar
 
     get "/interviewees", IntervieweeController, :index
     post "/inverviewees/invite", IntervieweeController, :invite
     delete "/inverviewees/invite", IntervieweeController, :invite
+
+    resources "companies", CompanyController, only: [] do
+      resources "events", EventController
+    end
 
     resources "/jobs", JobController
   end
