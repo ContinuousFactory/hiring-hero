@@ -32,7 +32,7 @@
 
       <div class="form-group">
         <%= label f, :applying_for, class: "control-label" %> <br/ >
-        <%= select f, :job_id, jobs_option_available(@current_organisation.id), class: "form-control"  %>
+        <%= select f, :job_id, jobs_option_available(@current_organisation.id), class: "form-control hh-select"  %>
       </div>
     </div>
 
