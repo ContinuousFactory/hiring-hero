@@ -18,6 +18,7 @@ import "bootstrap-fileinput"
 import "bootstrap-daterangepicker"
 import "trix"
 import "fullcalendar"
+import "./jquery.dropdown"
 
 // Import local files
 //
@@ -53,5 +54,6 @@ $(document).ready(function() {
       format: 'MM/DD/YYYY h:mm A'
     }
   });
+  $(".hh-select").dropdown({ "optionClass": "withripple" });
   $.material.init();
 });
