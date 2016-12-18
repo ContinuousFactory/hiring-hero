@@ -15,6 +15,7 @@ import "bootstrap"
 import "phoenix_html"
 import "bootstrap-material-design"
 import "bootstrap-fileinput"
+import "bootstrap-daterangepicker"
 import "trix"
 import "fullcalendar"
 
@@ -41,5 +42,16 @@ $(document).ready(function() {
     'showUpload': false
   });
   $('.dropdown-toggle').dropdown();
+  $('.datepicker').daterangepicker({
+    singleDatePicker: true,
+    showDropdowns: true,
+    timePicker: true,
+    timePickerIncrement: 30,
+    applyClass: 'btn-raised btn-primary',
+    cancelClass: 'btn-raised',
+    locale: {
+      format: 'MM/DD/YYYY h:mm A'
+    }
+  });
   $.material.init();
 });

@@ -1,0 +1,12 @@
+%br
+%ol.breadcrumb
+  %li
+    %a(href="/app") Home
+  %li
+    = link "Event List", to: company_event_path(@conn, :index, @conn.assigns.current_organisation)
+  %li.active
+    New Event
+
+%h3 New Event
+
+= render "form.html", changeset: @changeset, action: company_event_path(@conn, :create, @conn.assigns.current_organisation)

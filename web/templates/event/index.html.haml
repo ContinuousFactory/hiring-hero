@@ -18,66 +18,12 @@
       %th Due time
       %th
   %tbody
-    %tr
-      %td 1
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right(style="white-space: nowrap;")
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
-    %tr
-      %td 2
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right(style="white-space: nowrap;")
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
-    %tr
-      %td 3
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right(style="white-space: nowrap;")
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
-    %tr
-      %td 4
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right(style="white-space: nowrap;")
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
-    %tr
-      %td 5
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right(style="white-space: nowrap;")
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
-    %tr
-      %td 6
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right(style="white-space: nowrap;")
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
-    %tr
-      %td 7
-      %td Column content
-      %td Column content
-      %td Column content
-      %td.text-right
-        = link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, 1), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-          %span.glyphicon.glyphicon-trash
-        = end
+    - for event <- @events do
+      %tr
+        %td 1
+        %td= event.title
+        %td= event.priority
+        %td= event.happen_at
+        %td.text-right(style="white-space: nowrap;")
+          - link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, event), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
+            %span.glyphicon.glyphicon-trash

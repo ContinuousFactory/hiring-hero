@@ -81,6 +81,7 @@ exports.config = {
       trix: ['dist/trix.css'],
       'bootstrap-fileinput': ['css/fileinput.css'],
       'bootstrap-material-design': ['dist/css/bootstrap-material-design.css'],
+      'bootstrap-daterangepicker': ['daterangepicker.css'],
       antd: ['dist/antd.css']
     }
   }

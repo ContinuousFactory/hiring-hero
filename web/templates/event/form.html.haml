@@ -1,0 +1,28 @@
+- form_for @changeset, @action, fn f ->
+  - if @changeset.action do
+    .alert.alert-danger
+      %p Oops, something went wrong! Please check the errors below.
+
+  .form-group
+    = label f, :title, class: "control-label"
+    = text_input f, :title, class: "form-control"
+    = error_tag f, :title
+
+  .form-group
+    = label f, :priority, class: "control-label"
+    = select f, :priority, ["Low", "Normal", "High"], class: "form-control"
+    = error_tag f, :priority
+
+  .form-group
+    = label f, :happen_at, class: "control-label"
+    = text_input f, :happen_at, class: "form-control datepicker"
+    = error_tag f, :happen_at
+
+  .form-group
+    = label f, :description, class: "control-label"
+    = hidden_input f, :description, class: "form-control"
+    %trix-editor{:input => "job_description"}
+    = error_tag f, :description
+
+  .form-group
+    = submit "Submit", class: "btn btn-primary btn-sm btn-raised"

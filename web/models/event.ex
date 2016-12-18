@@ -17,6 +17,6 @@ defmodule Hiringhero.Event do
     model
     |> cast(params, [:title, :description, :happen_at, :priority])
     |> cast_assoc(:organisation)
-    |> validate_required([:title])
+    |> validate_required([:title, :happen_at, :organisation_id])
   end
 end
