@@ -1,11 +1,22 @@
 .logo {
   display: inline-block;
   background-image: url("/images/logo.png");
-  width: 150px;
-  height: 25px;
+  width: 165px;
+  height: 30px;
   display: inline-block;
   margin-bottom: 1em;
-  background-size: 150px 25px;
+  background-size: 165px 30px;
+}
+
+a {
+  color: #2f3234;
+}
+
+.h1-logo {
+  margin-bottom: 0;
+  width: 250px;
+  height: 42px;
+  background-size: 250px 42px;
 }
 
 .dropdown-menu li .btn-link {
@@ -62,4 +73,9 @@
 .ranges {
   position: absolute;
   left: 37px;
+}
+
+/* Override bootstrap */
+.btn-primary, .btn-default, .btn-warning {
+  border-color: transparent !important;
 }

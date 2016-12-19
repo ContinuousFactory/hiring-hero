@@ -48,7 +48,7 @@
           </div>
 
           <div class="form-group">
-            <%= submit "Update profile", class: "btn btn-success" %>
+            <%= submit "Update profile", class: "btn btn-primary btn-raised btn-sm" %>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
           <% end %>
 
           <div class="form-group">
-            <%= submit "Update profile", class: "btn btn-success" %>
+            <%= submit "Update profile", class: "btn btn-primary btn-raised btn-sm" %>
           </div>
         </div>
       </div>

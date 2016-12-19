@@ -7,7 +7,7 @@
 
 %h3 Job Board
 
-%table.table.table-hover
+%table.table.table-hover.table-condensed
   %thead
     %tr
       %th Title
@@ -24,4 +24,4 @@
           - link to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
             %span.glyphicon.glyphicon-trash
 
-= link "New job", to: job_path(@conn, :new), class: "btn btn-sm btn-default"
+= link "New job", to: job_path(@conn, :new), class: "btn btn-sm btn-primary btn-raised"

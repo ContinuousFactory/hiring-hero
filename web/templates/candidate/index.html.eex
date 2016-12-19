@@ -6,7 +6,7 @@
 
 <h3>Candidates</h3>
 
-<table class="table">
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
@@ -35,4 +35,4 @@
   </tbody>
 </table>
 
-<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-default btn-sm" %>
+<%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-primary btn-raised btn-sm" %>

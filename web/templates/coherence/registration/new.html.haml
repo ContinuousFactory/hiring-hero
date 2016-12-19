@@ -1,5 +1,6 @@
 .row
   .col-md-offset-4.col-md-4
-    %h3 Hiring hero
+    %div{:style => "text-align: center;"}
+      %h1.logo.h1-logo
 
     = render "form.html", changeset: @changeset, label: "Register", required: [required: ""], action: registration_path(@conn, :create)

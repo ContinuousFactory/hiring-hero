@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-md-offset-3 col-md-6">
-    <h1>Hiring Hero</h1>
+    <div style="text-align: center;">
+      <h1 class="logo h1-logo"></h1>
+    </div>
     <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f  -> %>
 
       <% login_field = Coherence.Config.login_field %>
