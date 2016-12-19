@@ -82,8 +82,13 @@ footer {
 
 /* Date picker */
 .ranges {
-  position: absolute;
+  position: absolute ;
   left: 37px;
+}
+.daterangepicker .left {
+  top: 50px !important;
+  position: relative !important;
+  height: 326px;
 }
 
 /* Override bootstrap */
@@ -101,6 +106,15 @@ footer {
   color: black;
 }
 
+.panel {
+  border-radius: 2px;
+    border: 0;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* END Override bootstrap*/
+
 .thumbnail{padding:0; border-radius:0; border:none; box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}
 .thumbnail>img{width:100%; display:block}
 .thumbnail h3{font-size:26px}
@@ -109,15 +123,6 @@ footer {
 .thumbnail .btn{border-radius:0; box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12); font-size:16px}
 
 /* FOOTER */
-.full {
-    width: 100%;
-}
-.gap {
-	height: 30px;
-	width: 100%;
-	clear: both;
-	display: block;
-}
 .footer {
 	background: #EDEFF1;
 	height: auto;
@@ -145,13 +150,6 @@ footer {
 }
 .footer a {
 	color: #78828D
-}
-.supportLi h4 {
-	font-size: 20px;
-	font-weight: lighter;
-	line-height: normal;
-	margin-bottom: 0 !important;
-	padding-bottom: 0;
 }
 
 .bg-gray {
@@ -197,12 +195,6 @@ footer {
 	font-size: 16px;
 	margin: 7px 1px 0px 1px;
 	color: #EDEFF1 !important;
-}
-.footer-bottom {
-	background: #EDEFF1;
-}
-.footer-bottom p.pull-left {
-	padding-top: 6px;
 }
 
 .footer h4 {

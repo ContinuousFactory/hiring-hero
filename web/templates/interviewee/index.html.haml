@@ -4,35 +4,39 @@
     %a{:href => "/app"} Home
   %li.active Interviewees
 
-%h3 Interviewees
-.row
-  .col-md-8
-    = form_tag(interviewee_path(@conn, :invite), class: "form-inline")
-      .form-group
-        = tag :input, type: :text, name: "name", placeholder: "Name", class: "form-control input-sm", required: true
-      .form-group
-        = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control input-sm", required: true
-      = tag :input, type: :submit, value: "Send invitation", class: "btn btn-xs btn-primary btn-raised"
+.bs-component
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Interviewees
+    .panel-body
+      .row
+        .col-md-8
+          = form_tag(interviewee_path(@conn, :invite), class: "form-inline")
+            .form-group
+              = tag :input, type: :text, name: "name", placeholder: "Name", class: "form-control input-sm", required: true
+            .form-group
+              = tag :input, type: :email, name: "email", placeholder: "Email", class: "form-control input-sm", required: true
+            = tag :input, type: :submit, value: "Send invitation", class: "btn btn-xs btn-primary btn-raised"
 
-%table.table.table-condensed
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Role
-      %th
-  %tbody
-    %tr
-      %td= @current_organisation.owner.name
-      %td= @current_organisation.owner.email
-      %td owner
-      %td
-    - for interviewee <- @interviewees do
-      %tr
-        %td= interviewee.name
-        %td= interviewee.email
-        %td
-        %td.text-right
-          - if is_owner(@conn.assigns.current_user, @current_organisation) do
-            - link to: "#{user_path(@conn, :delete, interviewee)}", method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-              %span.glyphicon.glyphicon-trash
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Role
+            %th
+        %tbody
+          %tr
+            %td= @current_organisation.owner.name
+            %td= @current_organisation.owner.email
+            %td owner
+            %td
+          - for interviewee <- @interviewees do
+            %tr
+              %td= interviewee.name
+              %td= interviewee.email
+              %td
+              %td.text-right
+                - if is_owner(@conn.assigns.current_user, @current_organisation) do
+                  - link to: "#{user_path(@conn, :delete, interviewee)}", method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
+                    %span.glyphicon.glyphicon-trash

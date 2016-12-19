@@ -7,6 +7,9 @@
   %li.active
     New Event
 
-%h3 New Event
-
-= render "form.html", changeset: @changeset, action: company_event_path(@conn, :create, @conn.assigns.current_organisation)
+.bs-component
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title New Event
+    .panel-body
+      = render "form.html", changeset: @changeset, action: company_event_path(@conn, :create, @conn.assigns.current_organisation)

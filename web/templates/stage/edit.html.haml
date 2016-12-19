@@ -9,6 +9,9 @@
   %li.active
     Edit
 
-%h3 Edit stage
-= render "form.html", changeset: @changeset, action: stage_path(@conn, :update, @stage)
-
+.bs-component
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Edit stage
+    .panel-body
+      = render "form.html", changeset: @changeset, action: stage_path(@conn, :update, @stage)

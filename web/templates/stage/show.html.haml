@@ -7,13 +7,15 @@
   %li.active
     = @stage.name
 
-%h3= @stage.name
-%ul
-  %li
-    %strong Name:
-    = @stage.name
-  %li
-    %strong Description:
-    = @stage.description
-
-#elm-questions
+.bs-component
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= @stage.name
+    .panel-body
+      %ul
+        %li
+          %strong Name:
+          = @stage.name
+        %li
+          %strong Description:
+          = @stage.description
