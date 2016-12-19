@@ -9,6 +9,7 @@
 
     <title>Hiring Hero</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="shortcut icon" type="image/png" href="<%= static_path(@conn, "/images/favicon.ico") %>">
   </head>
 
   <body style="background-color: white;">
