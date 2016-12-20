@@ -10,6 +10,11 @@
 
 .table-condensed {
   font-size: 14px;
+  border: 1px solid #dddddd;
+}
+
+thead {
+  background-color: #dddddd;
 }
 
 a {

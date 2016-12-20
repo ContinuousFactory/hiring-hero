@@ -13,13 +13,15 @@
       %th Title
       %th #Candidates
       %th Type
+      %th Created
       %th
   %tbody
     - for job <- @jobs do
       %tr
         %td= link job.title, to: job_path(@conn, :edit, job)
-        %td
+        %td= candidates_count_for(job)
         %td= job.type
+        %td= job.inserted_at
         %td.text-right.hh-actions(style="white-space: nowrap;")
           - link to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash", title: "Delete job" do
             %span.mdi-content-remove-circle-outline

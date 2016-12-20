@@ -5,6 +5,7 @@ defmodule Hiringhero.JobController do
 
   def index(conn, _params) do
     jobs = Repo.all(Job.with_org(conn.assigns.current_organisation.id))
+    jobs = Repo.preload(jobs, :candidates)
     render(conn, "index.html", jobs: jobs)
   end
 
