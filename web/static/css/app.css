@@ -8,6 +8,10 @@
   background-size: 165px 30px;
 }
 
+.table-condensed {
+  font-size: 14px;
+}
+
 a {
   color: #2f3234;
 }
@@ -63,6 +67,20 @@ a {
 }
 
 /* END Public Job page */
+
+.hh-actions form {
+  width: 0;
+  float: right;
+  padding-right: 10px;
+}
+.hh-action-item {
+  float: right;
+  padding-right: 10px;
+  line-height: 15px;
+}
+.hh-action-blue {
+  color: #1f92c8;
+}
 
 .small-trash {
   font-size: 12px;

@@ -10,7 +10,7 @@
 
   .form-group
     = label f, :type, class: "control-label"
-    = text_input f, :type, class: "form-control"
+    = select f, :type, ["Full-time", "Part-time", "Contract"], class: "form-control hh-select"
     = error_tag f, :type
 
   .form-group
@@ -20,4 +20,4 @@
     = error_tag f, :description
 
   .form-group
-    = submit "Submit", class: "btn btn-default btn-sm"
+    = submit "Submit", class: "btn btn-primary btn-raised btn-sm"

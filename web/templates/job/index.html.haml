@@ -11,19 +11,21 @@
   %thead
     %tr
       %th Title
-      %th Description
+      %th #Candidates
       %th Type
       %th
   %tbody
     - for job <- @jobs do
       %tr
         %td= link job.title, to: job_path(@conn, :edit, job)
-        %td= raw job.description
+        %td
         %td= job.type
-        %td.text-right(style="white-space: nowrap;")
-          - link to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-            %span.glyphicon.glyphicon-trash
+        %td.text-right.hh-actions(style="white-space: nowrap;")
+          - link to: job_path(@conn, :delete, job), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash", title: "Delete job" do
+            %span.mdi-content-remove-circle-outline
+          - link to: "/companies/#{@conn.assigns.current_organisation.subdomain}/jobs/#{job.id}", target: "_blank", title: "Preview public page" do
+            %icon.mdi-action-open-in-new.hh-action-item.hh-action-blue
+          - link to: job_path(@conn, :edit, job), title: "Edit job" do
+            %icon.mdi-editor-mode-edit.hh-action-item.hh-action-blue
 
 = link "New job", to: job_path(@conn, :new), class: "btn btn-sm btn-primary btn-raised"
-%br
-%br

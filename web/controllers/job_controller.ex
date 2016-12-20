@@ -26,7 +26,7 @@ defmodule Hiringhero.JobController do
         render(conn, "new.html", changeset: changeset)
     end
   end
-  
+
   def edit(conn, %{"id" => id}) do
     job = Repo.get!(Job, id)
     changeset = Job.changeset(job)
@@ -41,7 +41,7 @@ defmodule Hiringhero.JobController do
       {:ok, job} ->
         conn
         |> put_flash(:info, "Job updated successfully.")
-        |> redirect(to: job_path(conn, :show, job))
+        |> redirect(to: job_path(conn, :edit, job))
       {:error, changeset} ->
         render(conn, "edit.html", job: job, changeset: changeset)
     end
