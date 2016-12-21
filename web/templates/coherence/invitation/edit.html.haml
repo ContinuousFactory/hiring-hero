@@ -1,6 +1,7 @@
 .row
   .col-md-offset-4.col-md-4
-    %h3 Hiring hero
+    %div{:style => "text-align: center;"}
+      %h1.logo.h1-logo
     - form_for @changeset, invitation_path(@conn, :create_user), fn f  ->
       - if @changeset.action do
         .alert.alert-danger
@@ -32,5 +33,5 @@
         = password_input f, :password_confirmation, class: "form-control", required: ""
         = error_tag f, :password_confirmation
       .form-group
-        = submit "Create", class: "btn btn-primary btn-sm"
-        = link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn btn-sm"
+        = submit "Create", class: "btn btn-primary btn-raised btn-sm"
+        = link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn btn-sm btn-raised"

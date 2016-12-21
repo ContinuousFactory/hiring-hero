@@ -5,28 +5,25 @@
   %li.active
     Event List
 
-.bs-component
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title Event List
-    .panel-body
-      = link "Add event", to: company_event_path(@conn, :new, @conn.assigns.current_organisation.id), class: "btn btn-raised btn-xs btn-primary"
+%h3 Event List
 
-      %table.table.table-striped.table-hover.table-condensed
-        %thead
-          %tr
-            %th Status
-            %th Item
-            %th Priority
-            %th Due time
-            %th
-        %tbody
-          - for event <- @events do
-            %tr
-              %td 1
-              %td= event.title
-              %td= event.priority
-              %td= event.happen_at
-              %td.text-right(style="white-space: nowrap;")
-                - link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, event), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
-                  %span.glyphicon.glyphicon-trash
+%table.table.table-striped.table-hover.table-condensed
+  %thead
+    %tr
+      %th Status
+      %th Item
+      %th Priority
+      %th Due time
+      %th
+  %tbody
+    - for event <- @events do
+      %tr
+        %td 1
+        %td= event.title
+        %td= event.priority
+        %td= event.happen_at
+        %td.text-right(style="white-space: nowrap;")
+          - link to: company_event_path(@conn, :delete, @conn.assigns.current_organisation, event), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do
+            %span.glyphicon.glyphicon-trash
+
+= link "Add event", to: company_event_path(@conn, :new, @conn.assigns.current_organisation.id), class: "btn btn-raised btn-xs btn-primary"
