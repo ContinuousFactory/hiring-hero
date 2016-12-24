@@ -17,28 +17,20 @@ import "bootstrap-material-design"
 import "bootstrap-fileinput"
 import "bootstrap-daterangepicker"
 import "trix"
-import "fullcalendar"
+
+import Vue from "./vue.common"
 import "./jquery.dropdown"
 
-// Import local files
-//
-// Local files can be imported directly using relative
-// paths "./socket" or full ones "web/static/js/socket".
+import Board from './components/Board.vue'
 
-// import socket from "./socket"
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Post from './components/Post';
-
-if (document.querySelector('.dashboard-react')) {
-  ReactDOM.render(<Post />, document.querySelector('.dashboard-react'));
-}
+new Vue({
+  el: '#wrapper',
+  components: {
+    Board
+  }
+})
 
 $(document).ready(function() {
-  $('#calendar').fullCalendar({
-    weekends: false
-  });
-
   $('#candidate_document, #user_avatar, #user_my_organisation_logo').fileinput({
     'showUpload': false
   });

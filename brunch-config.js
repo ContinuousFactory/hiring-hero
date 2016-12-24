@@ -72,9 +72,10 @@ exports.config = {
   },
 
   npm: {
+    enabled: true,
     globals: {
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
     },
     styles: {
       fullcalendar: ['dist/fullcalendar.css'],
