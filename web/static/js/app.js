@@ -17,11 +17,15 @@ import "bootstrap-material-design"
 import "bootstrap-fileinput"
 import "bootstrap-daterangepicker"
 import "trix"
-
-import Vue from "./vue.common"
 import "./jquery.dropdown"
 
+import Vue from "./vue.common"
+import Vuex from 'vuex'
 import Board from './components/Board.vue'
+import { Button } from 'element-ui'
+
+Vue.use(Vuex)
+Vue.component("el-button", Button)
 
 new Vue({
   el: '#wrapper',

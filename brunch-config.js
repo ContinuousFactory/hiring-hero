@@ -83,7 +83,8 @@ exports.config = {
       'bootstrap-fileinput': ['css/fileinput.css'],
       'bootstrap-material-design': ['dist/css/bootstrap-material-design.css', 'dist/css/ripples.css'],
       'bootstrap-daterangepicker': ['daterangepicker.css'],
-      antd: ['dist/antd.css']
+      antd: ['dist/antd.css'],
+      'element-ui': ['lib/theme-default/index.css']
     }
   }
 };

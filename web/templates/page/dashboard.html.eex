@@ -4,3 +4,6 @@
 </ol>
 
 <h3>Dashboard</h3>
+
+<board></board>
+<el-button type="primary" size="small">This is cool</el-button>

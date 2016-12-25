@@ -1,11 +1,12 @@
 defmodule Hiringhero.CandidateController do
   use Hiringhero.Web, :controller
 
-  alias Hiringhero.Candidate
+  alias Hiringhero.{Candidate, Stage}
 
   def index(conn, _params) do
     candidates = Repo.all(Candidate.with_org(conn.assigns.current_organisation.id))
-    render(conn, "index.html", candidates: candidates)
+    stages = Repo.all(Stage.with_org(conn.assigns.current_organisation.id))
+    render(conn, "index.html", candidates: candidates, stages: stages)
   end
 
   def new(conn, _params) do

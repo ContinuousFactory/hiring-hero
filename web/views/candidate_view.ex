@@ -3,8 +3,7 @@ defmodule Hiringhero.CandidateView do
 
   import Ecto.Query
 
-  alias Hiringhero.Repo
-  alias Hiringhero.Job
+  alias Hiringhero.{Repo, Job, Stage}
 
   def jobs_option_available(org_id) do
     jobs = Repo.all(

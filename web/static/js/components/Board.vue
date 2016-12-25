@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h1>Hello World from Vue - {{title}}</h1>
+    <h3>Candidates Pipeline {{this.counter}}</h3>
     <p>This is pretty amazing</p>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["counter"],
+
   data () {
     return {
       title: 'Long Nguyen'
@@ -15,5 +17,8 @@ export default {
 }
 </script>
 
-<style lang='css'>
+<style scoped>
+  h3 {
+    color: blue;
+  }
 </style>

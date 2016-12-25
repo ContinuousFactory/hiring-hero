@@ -6,6 +6,12 @@
 
 <h3>Candidates pipeline</h3>
 
+<%= for stage <- @stages do %>
+  <%= stage.name %>
+<% end %>
+
+<board counter="<%= Enum.count(@candidates) %>"></board>
+
 <table class="table table-condensed">
   <thead>
     <tr>
