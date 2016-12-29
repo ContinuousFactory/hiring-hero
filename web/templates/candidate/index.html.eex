@@ -4,41 +4,10 @@
   <li class="active">Candidates</li>
 </ol>
 
-<h3>Candidates pipeline</h3>
-
-<%= for stage <- @stages do %>
-  <%= stage.name %>
-<% end %>
-
-<board counter="<%= Enum.count(@candidates) %>"></board>
-
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>Summary</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for candidate <- @candidates do %>
-    <tr>
-      <td><%= candidate.name %></td>
-      <td><%= candidate.email %></td>
-      <td><%= candidate.status %></td>
-      <td><%= raw candidate.summary %></td>
-
-      <td class="text-right">
-        <%= link to: candidate_path(@conn, :delete, candidate), method: :delete, data: [confirm: "Are you sure?"], class: "small-trash" do %>
-          <span class="glyphicon glyphicon-trash"></span>
-        <% end %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<board
+  :candidates="<%= candidates_data(@candidates) %>"
+  :stages="<%= stages_data(@conn.assigns.current_organisation.id) %>"
+  >
+</board>
 
 <%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-primary btn-raised btn-sm" %>
