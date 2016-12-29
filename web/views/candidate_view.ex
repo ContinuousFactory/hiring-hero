@@ -28,8 +28,8 @@ defmodule Hiringhero.CandidateView do
     end) |> Poison.encode!
   end
 
-  def stages_data(org_id) do
-    Enum.map(Repo.all(Stage.with_org(org_id)), fn (stage) ->
+  def stages_data(stages) do
+    Enum.map(stages, fn (stage) ->
       %{
         name: stage.name,
         description: stage.description,

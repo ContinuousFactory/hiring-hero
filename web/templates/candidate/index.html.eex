@@ -6,7 +6,7 @@
 
 <board
   :candidates="<%= candidates_data(@candidates) %>"
-  :stages="<%= stages_data(@conn.assigns.current_organisation.id) %>"
+  :stages="<%= stages_data(@stages) %>"
   >
 </board>
 
