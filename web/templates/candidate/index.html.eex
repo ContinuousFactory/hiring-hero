@@ -11,3 +11,5 @@
 </board>
 
 <%= link "Add candidate", to: candidate_path(@conn, :new), class: "btn btn-primary btn-raised btn-sm" %>
+<br/>
+<br/>
