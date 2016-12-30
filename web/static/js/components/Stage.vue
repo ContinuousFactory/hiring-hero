@@ -6,6 +6,8 @@
     <app-candidate-card></app-candidate-card>
     <app-candidate-card></app-candidate-card>
     <app-candidate-card></app-candidate-card>
+    <app-candidate-card></app-candidate-card>
+    <app-candidate-card></app-candidate-card>
   </div>
 </template>
 

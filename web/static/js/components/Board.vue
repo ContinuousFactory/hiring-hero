@@ -1,8 +1,8 @@
 <template>
   <div>
     <h3>Candidates Pipeline</h3>
-    <vue-nice-scrollbar classes="my-scrollbar" v-bind:speed=100 theme="dark">
-      <div class="scroll-me">
+    <vue-nice-scrollbar classes="my-scrollbar" :speed=100 theme="light">
+      <div class="scroll-me" :style="styleBoard">
         <div class="stage-column" v-for="stage in stages">
           <el-card :body-style="{ padding: '14px' }">
             <app-stage :stage="stage"></app-stage>
@@ -23,6 +23,10 @@
 
     data () {
       return {
+        styleBoard: {
+          minWidth: this.stages.length * 240 + 40,
+          overflow: 'hidden'
+        }
       }
     },
 
@@ -46,10 +50,6 @@
     min-width: 300px;
     max-height: 450px;
     margin: 0;
-  }
-
-  .scroll-me{
-    min-width: 1000px;
   }
 
   .stage-column {
