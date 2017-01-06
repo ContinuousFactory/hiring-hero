@@ -20,12 +20,8 @@ import "trix"
 import "./jquery.dropdown"
 
 import Vue from "./vue.common"
-import Vuex from 'vuex'
 import Board from './components/Board.vue'
-import { Button } from 'element-ui'
 
-Vue.use(Vuex)
-Vue.component("el-button", Button)
 
 new Vue({
   el: '#wrapper',
